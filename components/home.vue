@@ -5,13 +5,24 @@
         <v-col>
           <h1 >Hello, I'm <span class="primary--text">Allani Ahmed</span></h1>
           <h1 >I'am a full-stack web developper</h1>
-          <v-btn to="#about" class="ma-2" outlined color="white" >
+          <v-btn @click="fpage('about')" class="ma-2" outlined color="white" >
             View my work<Fas class="ml-2" i="arrow-right" />
           </v-btn>
         </v-col>
     </v-row>
   </v-container>
 </template>
+<script>
+export default {
+  methods:{
+    fpage(name) {
+      if (process.client) {
+        document.getElementById( name ).scrollIntoView();
+      }
+    },
+  }
+}
+</script>
 <style scoped>
 .bgImgCenter{
     background-image: url('~assets/home.png');

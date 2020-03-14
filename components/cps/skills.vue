@@ -15,7 +15,8 @@
         <v-card v-observe-visibility="visibilityChanged" data-aos="fade-left" class="text-center" flat>
           <v-row v-for="(value, key) in skills" class="my-4" no-gutters v-bind:key="key">
             <v-col cols="3">
-              <div class="text-center font-weight-bold blue darken-1 white--text">{{ value.name }}</div>
+              <div class="text-center blue darken-1 white--text">
+                <span class="body-2 font-weight-bold">{{ value.name }}</span></div>
             </v-col>
             <v-col>
               <div class="grey lighten-3">
@@ -59,10 +60,9 @@ export default {
   }),
   methods: {
     visibilityChanged (isVisible, entry) {
-        console.log("visibilityChanged")
-        const l=this.skills.map(cv => Object.assign(cv, {rate: cv.value}))
-        this.skills= l
-        },
+      const l=this.skills.map(cv => Object.assign(cv, {rate: cv.value}))
+      this.skills= l
+    },
   }
 };
 </script>

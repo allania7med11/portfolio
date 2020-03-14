@@ -1,12 +1,13 @@
 <template>
   <div>
     <v-container fluid class="full-height ma-0 pa-0">
-      <home id="home" />
+      <home id="home"  />
     </v-container>
-    <Header />
-    <v-container fluid class="ma-0 pa-0">
-      <about id="about" class="full-height"/>
+    <Header id="sticky" :vpage="vpage" :isActive="isActive"  />
+    <v-container fluid class="full-height ma-0 pa-0">
+      <about id="about"   />
     </v-container>
+
   </div>
 </template>
 
@@ -22,8 +23,42 @@ export default {
   },
   data() {
     return {
-      clipped: false
+      clipped: false,
+      vpage:"home",
+      isActive: false
     };
+  },
+  created() {
+    if (process.client) {
+      window.addEventListener("scroll", this.handleScroll);
+    }
+  },
+  mounted() {
+    this.handleScroll()
+  },
+  destroyed() {
+    if (process.client) {
+      window.removeEventListener("scroll", this.handleScroll);
+    }
+  },
+  methods:{
+    handleScroll() {
+      if (process.client) {
+        const sticky = document.getElementById("sticky").offsetTop
+        const tHome = document.getElementById("home").offsetTop
+        const tAbout = document.getElementById("about").offsetTop
+        if (window.pageYOffset<tAbout){
+          this.vpage = "home"
+        } else {
+          this.vpage = "about"
+        }
+        if (window.pageYOffset > sticky) {
+          this.isActive = true;
+        } else {
+          this.isActive = false;
+        }
+      }
+    }
   }
 };
 </script>

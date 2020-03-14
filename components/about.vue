@@ -15,6 +15,7 @@
     <br />
     <br />
     <v-lazy
+          ref="about"
           v-model="isActive1"
           :options="{
           threshold: .5
@@ -34,6 +35,10 @@
         >
       <skills/>
     </v-lazy>
+    <br />
+    <br />
+    <br />
+    <br />
   </v-container>
 </template>
 <script>

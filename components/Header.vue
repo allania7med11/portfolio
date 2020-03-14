@@ -1,56 +1,66 @@
 <template>
-<div :class="{ sticky: isActive }" ref="myHeader">
-  <v-toolbar  dense dark >
+  <div :class="{ sticky: isActive }" >
+    <v-toolbar dense dark>
       <v-toolbar-items>
-        <v-btn text to="#home" exact>
-          <v-avatar>
-            <!-- eslint-disable-next-line vue/html-self-closing -->
-            <img
-              class="pa-1"
-              src="~/assets/favicon.png"
-              alt="EffectiveWebApp"
-            />
-          </v-avatar>
-          <span class="ml-2 font-weight-black font-italic">
-            Home
-          </span>
-        </v-btn>
-      </v-toolbar-items>
-      <v-toolbar-items>
-        <v-btn to="#about" text exact>
-          <span>About</span>
-        </v-btn>
+        <v-btn-toggle group :key="componentKey" @change="fpage" dark v-model="page" tile group borderless>
+          <v-btn class="ma-0"  value="home">
+            <v-avatar>
+              <!-- eslint-disable-next-line vue/html-self-closing -->
+              <img class="pa-1" src="~/assets/favicon.png" alt="EffectiveWebApp" />
+            </v-avatar>
+            <span class="ml-2 font-weight-black font-italic">Home</span>
+          </v-btn>
+          <v-btn class="ma-0" value="about" >
+            <span>About</span>
+          </v-btn>
+        </v-btn-toggle>
       </v-toolbar-items>
     </v-toolbar>
-</div>
+  </div>
 </template>
 
 <script>
 export default {
-  created() {
-    if (process.client) {
-      window.addEventListener("scroll", this.handleScroll);
-    }
-  },
-  destroyed() {
-    if (process.client) {
-      window.removeEventListener("scroll", this.handleScroll);
+  props: {
+    vpage: {
+      type: String,
+      required: true,
+      default: "home"
+    },
+    isActive: {
+      type: Boolean,
+      required: true,
+      default: "home"
     }
   },
   data() {
     return {
-      isActive: false,
+      componentKey: 0,
+      pageold: "home",
+      page: "home"
     };
   },
   methods: {
-    handleScroll(event) {
+    fpage() {
       if (process.client) {
-        var header = this.$refs.myHeader;
-        var sticky = header.offsetTop;
-        if (window.pageYOffset > sticky) {
-          this.isActive=true
+        if (["about","home"].includes(this.page)){
+          document.getElementById(this.page).scrollIntoView();
+          this.pageold=this.page
         } else {
-          this.isActive=false
+          this.page=this.pageold
+          document.getElementById(this.page).scrollIntoView();
+          this.componentKey += 1
+        }
+      }
+    }
+  },
+  watch: {
+    vpage: {
+      immediate: true,
+      handler(value) { 
+        if (["about","home"].includes(this.vpage)){
+          this.page= this.vpage
+          this.componentKey += 1
         }
       }
     }
