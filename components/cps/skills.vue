@@ -12,8 +12,8 @@
           </v-card>
       </v-col>
       <v-col cols="12" sm="7" >
-        <v-card v-observe-visibility="visibilityChanged" data-aos="fade-left" class="text-center" flat>
-          <v-row v-for="(value, key) in skills" class="my-4" no-gutters v-bind:key="key">
+        <v-card  data-aos="fade-left" class="text-center" flat>
+          <v-row v-observe-visibility="visibilityChanged" v-for="(value, key) in skills" class="my-4" no-gutters v-bind:key="key">
             <v-col cols="3">
               <div class="text-center blue darken-1 white--text">
                 <span class="body-2 font-weight-bold">{{ value.name }}</span></div>
