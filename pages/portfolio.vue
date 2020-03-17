@@ -1,7 +1,7 @@
 <template>
   <v-container class="grey lighten-3" fluid>
     <v-row>
-      <v-col  cols="12" sm="5">
+      <v-col cols="12"  sm="5">
         <v-card class="grey lighten-3" flat>
           <v-card-title class="font-weight-bold blue--text">Structure Analysis Software</v-card-title>
           <v-card-text class="my-0 py-0">
@@ -16,16 +16,24 @@
           </v-card-text>
         </v-card>
       </v-col>
-      <v-col cols="12" sm="7">
+      <v-col cols="12"  sm="7">
         <v-row>
-          <v-img :src="items[page-1].src" />
+          <v-container fluid>
+            <v-row>
+              <v-col cols="12">
+                <v-row
+                  align="center"
+                  justify="center"
+                >
+                  <v-img contain :style="imageHeight" :src="items[page-1].src" />
+                </v-row>
+              </v-col>
+            </v-row>
+          </v-container>
         </v-row>
-        <v-row align="center" justify="center"> 
+        <v-row align="center" justify="center">
           <div class="text-center">
-            <v-pagination
-              v-model="page"
-              :length="4"
-            ></v-pagination>
+            <v-pagination v-model="page" :length="4"></v-pagination>
           </div>
         </v-row>
       </v-col>
@@ -50,13 +58,28 @@ export default {
           src: require("@/assets/structure/login.png")
         },
         {
-          src:require("@/assets/structure/section.png")
+          src: require("@/assets/structure/section.png")
         },
         {
-          src:require("@/assets/structure/detail.png")
+          src: require("@/assets/structure/detail.png")
         }
       ]
     };
-  }
+  },
+  computed: {
+      imageHeight () {
+        if (this.$vuetify.breakpoint.mdAndUp){
+          return ({height: "350px"})
+        } else if (this.$vuetify.breakpoint.smAndUp){
+          return ({height: "250px"})
+        }
+        return ({height: "300px"})
+      },
+    },
 };
 </script>
+<style scoped>
+img {
+  height: 50%;
+}
+</style>
