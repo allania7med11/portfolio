@@ -14,13 +14,14 @@
     </v-row>
     <br />
     <br />
+    <br />
     <v-lazy
           ref="about"
           v-model="isActive1"
           :options="{
           threshold: .5
         }"
-          min-height="200"
+          min-height="200px"
         >
       <features/>
     </v-lazy>
@@ -31,7 +32,7 @@
           :options="{
           threshold: .5
         }"
-          min-height="200"
+          min-height="200px"
         >
       <skills/>
     </v-lazy>
@@ -52,8 +53,6 @@ export default {
   data: () => ({
     isActive1: false,
     isActive2: false,
-    show: false,
-    isVisible: true
   })
 };
 </script>

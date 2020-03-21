@@ -13,6 +13,12 @@
           <v-btn class="ma-0" value="about" >
             <span>About</span>
           </v-btn>
+          <v-btn class="ma-0" value="portfolio" >
+            <span>Portfolio</span>
+          </v-btn>
+          <v-btn class="ma-0" value="contact" >
+            <span>Contact</span>
+          </v-btn>
         </v-btn-toggle>
       </v-toolbar-items>
     </v-toolbar>
@@ -37,13 +43,14 @@ export default {
     return {
       componentKey: 0,
       pageold: "home",
-      page: "home"
+      page: "home",
+      pages: ["home", "about", "portfolio", "contact"]
     };
   },
   methods: {
     fpage() {
       if (process.client) {
-        if (["about","home"].includes(this.page)){
+        if (this.pages.includes(this.page)){
           document.getElementById(this.page).scrollIntoView();
           this.pageold=this.page
         } else {
@@ -58,7 +65,7 @@ export default {
     vpage: {
       immediate: true,
       handler(value) { 
-        if (["about","home"].includes(this.vpage)){
+        if (this.pages.includes(this.vpage)){
           this.page= this.vpage
           this.componentKey += 1
         }

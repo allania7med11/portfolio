@@ -100,5 +100,36 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  fontawesome: {
+    imports: [
+      {
+        set: "@fortawesome/free-solid-svg-icons", // Solid icons
+        icons: [
+          "faHome",
+          "faEnvelope",
+          "faUser",
+          "faSignInAlt",
+          "faPaperPlane",
+          "faCheck",
+          "faTimes",
+          "faCaretDown",
+          "faCaretRight",
+          "faFolderOpen",
+          "faEdit",
+          "faTrashAlt",
+          "faPlus",
+          "faCopy",
+          "faSave",
+          "faBook",
+          "faList",
+          "faPlusCircle",
+          "faMinusCircle",
+          "faSearch",
+          "faEye",
+          "faBars"
+        ]
+      }
+    ]
   }
 };
