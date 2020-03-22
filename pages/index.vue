@@ -1,23 +1,40 @@
 <template>
   <div>
     <v-container fluid class="full-height ma-0 pa-0">
-      <home id="home"  />
+      <home id="home" />
     </v-container>
-    <Header id="sticky" :vpage="vpage" :isActive="isActive"  />
+    <Header
+      id="sticky"
+      :page="page"
+      :isActive="isActive"
+      @change="onChangeHeader"
+    />
     <v-container fluid class="full3-height ma-0 pa-0">
-      <about id="about"   />
-      <portfolio id="portfolio"   />
-      <contact id="contact"   />
+      <div id="about" min-height="100vh">
+        <v-lazy v-model="Active['about']" :options="{threshold: .5}" min-height="200px">
+          <about />
+        </v-lazy>
+      </div>
+      <div id="portfolio" min-height="100vh">
+        <v-lazy v-model="Active['portfolio']" :options="{threshold: .5}" min-height="200px">
+          <portfolio />
+        </v-lazy>
+      </div>
+      <div id="contact" min-height="100vh">
+        <v-lazy v-model="Active['contact']" :options="{threshold: .5}" min-height="200px">
+          <contact />
+        </v-lazy>
+      </div>
     </v-container>
   </div>
 </template>
 
 <script>
-import Header from "~/components/Header.vue"
-import home from "~/components/home.vue"
-import about from "~/components/about.vue"
-import portfolio from "~/components/portfolio.vue"
-import contact from "~/components/contact.vue"
+import Header from "~/components/Header.vue";
+import home from "~/components/home.vue";
+import about from "~/components/about.vue";
+import portfolio from "~/components/portfolio.vue";
+import contact from "~/components/contact.vue";
 export default {
   components: {
     Header,
@@ -28,9 +45,11 @@ export default {
   },
   data() {
     return {
+      vpage: "home",
       clipped: false,
-      vpage:"home",
-      isActive: false
+      page: "home",
+      isActive: false,
+      Active: { about: false, portfolio: false, contact: true }
     };
   },
   created() {
@@ -39,31 +58,61 @@ export default {
     }
   },
   mounted() {
-    this.handleScroll()
+    this.handleScroll();
   },
   destroyed() {
     if (process.client) {
       window.removeEventListener("scroll", this.handleScroll);
     }
   },
-  methods:{
+  watch: {
+    vpage: {
+      immediate: true,
+      handler(val) {
+        if (process.client) {
+          this.page = val;
+        }
+      }
+    }
+  },
+  methods: {
+    async onChangeHeader(value) {
+      switch (value) {
+        case "about":
+          this.Active = Object.assign(this.Active, { about: true });
+          break;
+        case "portfolio":
+          this.Active = Object.assign(this.Active, {
+            about: true,
+            portfolio: true
+          });
+          break;
+        case "contact":
+          this.Active = Object.assign(this.Active, {
+            about: true,
+            portfolio: true,
+            contact: true
+          });
+          break;
+      }
+      this.page = await value;
+      document.getElementById(this.page).scrollIntoView();
+    },
     handleScroll() {
       if (process.client) {
-        const sticky = document.getElementById("sticky").offsetTop
-        const tAbout = document.getElementById("about").offsetTop
-        const tPortfolio = document.getElementById("portfolio").offsetTop
-        const tContact = document.getElementById("contact").offsetTop
-        console.log(window.pageYOffset,tContact)
-        if (1.1*window.pageYOffset>=tContact){
-          this.vpage = "contact"
-        } else if(1.1*window.pageYOffset>=tPortfolio) {
-          this.vpage = "portfolio"
-        } else if(1.1*window.pageYOffset>=tAbout) {
-          this.vpage = "about"
+        const sticky = document.getElementById("sticky").offsetTop;
+        const tAbout = document.getElementById("about").offsetTop;
+        const tPortfolio = document.getElementById("portfolio").offsetTop;
+        const tContact = document.getElementById("contact").offsetTop;
+        if (1.1 * window.pageYOffset >= tContact) {
+          this.vpage = "contact";
+        } else if (1.1 * window.pageYOffset >= tPortfolio) {
+          this.vpage = "portfolio";
+        } else if (1.1 * window.pageYOffset >= tAbout) {
+          this.vpage = "about";
         } else {
-          this.vpage = "home"
+          this.vpage = "home";
         }
-        console.log(this.vpage)
         if (window.pageYOffset > sticky) {
           this.isActive = true;
         } else {

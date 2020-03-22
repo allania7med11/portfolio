@@ -1,5 +1,5 @@
 import colors from "vuetify/es5/util/colors";
-
+import { Production, urls } from "./env"
 export default {
   mode: "universal",
   /*
@@ -65,7 +65,10 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: urls.baseURL,
+    https: Production
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module

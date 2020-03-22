@@ -15,27 +15,10 @@
     <br />
     <br />
     <br />
-    <v-lazy
-          ref="about"
-          v-model="isActive1"
-          :options="{
-          threshold: .5
-        }"
-          min-height="200px"
-        >
       <features/>
-    </v-lazy>
     <br />
     <br />
-    <v-lazy
-          v-model="isActive2"
-          :options="{
-          threshold: .5
-        }"
-          min-height="200px"
-        >
       <skills/>
-    </v-lazy>
     <br />
     <br />
     <br />

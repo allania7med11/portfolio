@@ -1,6 +1,8 @@
 <template>
   <v-container fluid class="grey darken-4 white--text pa-5 ma-0 text-center">
     <br>
+    <br>
+    <br>
     <v-row>
       <v-col>
         <div
@@ -11,9 +13,6 @@
           Have a question or want to work together?</div>
       </v-col>
     </v-row>
-    <v-lazy v-model="isActive1" :options="{
-          threshold: .5
-        }" min-height="200px">
       <v-row justify="center">
         <v-col md="8">
           <v-alert v-if="success" dismissible type="success">
@@ -70,7 +69,6 @@
           </v-card>
         </v-col>
       </v-row>
-    </v-lazy>
   </v-container>
 </template>
 <script>
@@ -97,6 +95,7 @@ export default {
   },
 
   data: () => ({
+    isActive1: false,
     from_email: "",
     subject: "",
     message: "",

@@ -7,6 +7,7 @@
             <v-card-subtitle class="justify-center">
               I'm a full-stack web developer from Tunis ,Kairouan.
               <br />I have a passion to solve difficult problems and make effective applications that make life of people easier.
+              <br />
               <v-btn class="blue--text" text @click="fpage('contact')"  >
                 Let's make something special.
               </v-btn>

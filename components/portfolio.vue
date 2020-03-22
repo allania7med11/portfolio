@@ -2,6 +2,7 @@
   <v-container class="grey lighten-2"  fluid>
     <br />
     <br />
+    <br />
     <v-row>
       <v-col>
         <div
@@ -12,9 +13,6 @@
     </v-row>
     <br />
     <br />
-    <v-lazy v-model="isActive1" :options="{
-          threshold: .5
-        }" min-height="200px">
       <v-row  >
         <v-col cols="12" md="6">
           <v-card  class="grey lighten-2"  flat>
@@ -78,15 +76,6 @@
           </v-row>
         </v-col>
       </v-row>
-    </v-lazy>
-    <v-lazy
-      ref="about"
-      v-model="isActive2"
-      :options="{
-          threshold: .5
-        }"
-      min-height="200px"
-    >
       <v-row >
         <v-col cols="12" md="6">
           <v-row>
@@ -162,7 +151,6 @@
           </v-row>
         </v-col>
       </v-row>
-    </v-lazy>
   </v-container>
 </template>
 

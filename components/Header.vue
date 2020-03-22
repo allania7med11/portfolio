@@ -2,21 +2,21 @@
   <div :class="{ sticky: isActive }" >
     <v-toolbar dense dark>
       <v-toolbar-items>
-        <v-btn-toggle group :key="componentKey" @change="fpage" dark v-model="page" tile group borderless>
-          <v-btn class="ma-0"  value="home">
+        <v-btn-toggle mandatory group :key="componentKey"     @change="fpage" dark v-model="pageN" tile group borderless>
+          <v-btn @click="fpageB('home')" class="ma-0"  value="home">
             <v-avatar>
               <!-- eslint-disable-next-line vue/html-self-closing -->
               <img class="pa-1" src="~/assets/favicon.png" alt="EffectiveWebApp" />
             </v-avatar>
             <span class="ml-2 font-weight-black font-italic">Home</span>
           </v-btn>
-          <v-btn class="ma-0" value="about" >
+          <v-btn @click="fpageB('about')" class="ma-0" value="about" >
             <span>About</span>
           </v-btn>
-          <v-btn class="ma-0" value="portfolio" >
+          <v-btn @click="fpageB('portfolio')" class="ma-0" value="portfolio" >
             <span>Portfolio</span>
           </v-btn>
-          <v-btn class="ma-0" value="contact" >
+          <v-btn @click="fpageB('contact')" class="ma-0" value="contact" >
             <span>Contact</span>
           </v-btn>
         </v-btn-toggle>
@@ -28,7 +28,7 @@
 <script>
 export default {
   props: {
-    vpage: {
+    page: {
       type: String,
       required: true,
       default: "home"
@@ -36,39 +36,32 @@ export default {
     isActive: {
       type: Boolean,
       required: true,
-      default: "home"
+      default: false
     }
   },
   data() {
     return {
-      componentKey: 0,
-      pageold: "home",
-      page: "home",
-      pages: ["home", "about", "portfolio", "contact"]
+      componentKey :0,
+      pageN: 'home',
     };
   },
   methods: {
-    fpage() {
-      if (process.client) {
-        if (this.pages.includes(this.page)){
-          document.getElementById(this.page).scrollIntoView();
-          this.pageold=this.page
-        } else {
-          this.page=this.pageold
-          document.getElementById(this.page).scrollIntoView();
-          this.componentKey += 1
-        }
+    async fpage() {
+      console.log("fpage", this.pageN)
+      await this.$emit('change', this.pageN)
+    },
+    async fpageB(page) {
+      if (page===this.pageN){
+        console.log("fpageB", this.pageN)
+        await this.$emit('change', this.pageN)
       }
     }
   },
   watch: {
-    vpage: {
+    page: {
       immediate: true,
       handler(value) { 
-        if (this.pages.includes(this.vpage)){
-          this.page= this.vpage
-          this.componentKey += 1
-        }
+        this.pageN = this.page
       }
     }
   }
