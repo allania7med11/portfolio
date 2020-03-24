@@ -10,17 +10,17 @@
       @change="onChangeHeader"
     />
     <v-container fluid class="full3-height ma-0 pa-0">
-      <div id="about" min-height="100vh">
+      <div id="about" style="padding-top: 70px;" min-height="100vh">
         <v-lazy v-model="Active['about']" :options="{threshold: .5}" min-height="200px">
           <about />
         </v-lazy>
       </div>
-      <div id="portfolio" min-height="100vh">
+      <div id="portfolio" style="padding-top: 60px;" class="grey lighten-2" min-height="100vh">
         <v-lazy v-model="Active['portfolio']" :options="{threshold: .5}" min-height="200px">
           <portfolio />
         </v-lazy>
       </div>
-      <div id="contact" min-height="100vh">
+      <div id="contact" style="padding-top: 60px;" class="grey darken-4" min-height="100vh">
         <v-lazy v-model="Active['contact']" :options="{threshold: .5}" min-height="200px">
           <contact />
         </v-lazy>
@@ -35,6 +35,7 @@ import home from "~/components/home.vue";
 import about from "~/components/about.vue";
 import portfolio from "~/components/portfolio.vue";
 import contact from "~/components/contact.vue";
+import { mapState, mapActions } from "vuex"
 export default {
   components: {
     Header,
@@ -49,8 +50,10 @@ export default {
       clipped: false,
       page: "home",
       isActive: false,
-      Active: { about: false, portfolio: false, contact: true }
     };
+  },
+  computed: {
+    ...mapState(["Active"])
   },
   created() {
     if (process.client) {
@@ -76,25 +79,21 @@ export default {
     }
   },
   methods: {
+    ...mapActions(["ActiveChange"]),
     async onChangeHeader(value) {
+      let change = {}
       switch (value) {
         case "about":
-          this.Active = Object.assign(this.Active, { about: true });
+          change = { about: true }
           break;
         case "portfolio":
-          this.Active = Object.assign(this.Active, {
-            about: true,
-            portfolio: true
-          });
+          change = {about: true,portfolio: true}
           break;
         case "contact":
-          this.Active = Object.assign(this.Active, {
-            about: true,
-            portfolio: true,
-            contact: true
-          });
+          change = {about: true,portfolio: true, contact: true}
           break;
       }
+      await this.ActiveChange(change)
       this.page = await value;
       document.getElementById(this.page).scrollIntoView();
     },

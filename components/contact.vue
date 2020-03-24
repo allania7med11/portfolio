@@ -1,8 +1,5 @@
 <template>
-  <v-container fluid class="grey darken-4 white--text pa-5 ma-0 text-center">
-    <br>
-    <br>
-    <br>
+  <v-container fluid class="white--text px-5 ma-0 text-center">
     <v-row>
       <v-col>
         <div

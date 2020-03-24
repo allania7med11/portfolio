@@ -1,8 +1,5 @@
 <template>
-  <v-container class="grey lighten-2"  fluid>
-    <br />
-    <br />
-    <br />
+  <v-container   fluid>
     <v-row>
       <v-col>
         <div

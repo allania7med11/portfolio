@@ -1,9 +1,5 @@
 <template>
   <v-container fluid>
-    <br />
-    <br />
-    <br />
-    <br />
     <v-row>
       <v-col>
         <div

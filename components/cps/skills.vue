@@ -8,7 +8,7 @@
               I'm a full-stack web developer from Tunis ,Kairouan.
               <br />I have a passion to solve difficult problems and make effective applications that make life of people easier.
               <br />
-              <v-btn class="blue--text" text @click="fpage('contact')"  >
+              <v-btn small class="pl-0 text-center font-weight-bold blue--text" text @click="fpage('contact')"  >
                 Let's make something special.
               </v-btn>
             </v-card-subtitle>
@@ -40,6 +40,7 @@
 <script>
 import features from "~/components/cps/features.vue"
 import skills from "~/components/cps/skills.vue"
+import { mapState, mapActions } from "vuex"
 export default {
   components: {
     features,
@@ -62,9 +63,23 @@ export default {
     ]
   }),
   methods: {
-    fpage(name) {
+    ...mapActions(["ActiveChange"]),
+    async fpage(value) {
       if (process.client) {
-        document.getElementById( name ).scrollIntoView();
+        let change = {}
+        switch (value) {
+          case "about":
+            change = { about: true }
+            break;
+          case "portfolio":
+            change = {about: true,portfolio: true}
+            break;
+          case "contact":
+            change = {about: true,portfolio: true, contact: true}
+            break;
+        }
+        await this.ActiveChange(change)
+        document.getElementById( value ).scrollIntoView();
       }
     },
     visibilityChanged (isVisible, entry) {
