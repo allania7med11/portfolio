@@ -1,14 +1,13 @@
 <template>
   <div>
     <v-container fluid class="full-height ma-0 pa-0">
-      <home id="home" />
+      <home  id="home" />
     </v-container>
-    <Header
-      id="sticky"
-      :page="page"
-      :isActive="isActive"
-      @change="onChangeHeader"
-    />
+    <div id="sticky">
+      <client-only>
+        <Header />
+      </client-only>
+    </div>
     <v-container fluid class="full3-height ma-0 pa-0">
       <div id="about" style="padding-top: 70px;" min-height="100vh">
         <v-lazy v-model="Active['about']" :options="{threshold: .5}" min-height="200px">
@@ -48,12 +47,10 @@ export default {
     return {
       vpage: "home",
       clipped: false,
-      page: "home",
-      isActive: false,
     };
   },
   computed: {
-    ...mapState(["Active"])
+    ...mapState(["Active","page","isActive"])
   },
   created() {
     if (process.client) {
@@ -73,30 +70,13 @@ export default {
       immediate: true,
       handler(val) {
         if (process.client) {
-          this.page = val;
+          this.stateChange({state:"page",value:val})
         }
       }
     }
   },
   methods: {
-    ...mapActions(["ActiveChange"]),
-    async onChangeHeader(value) {
-      let change = {}
-      switch (value) {
-        case "about":
-          change = { about: true }
-          break;
-        case "portfolio":
-          change = {about: true,portfolio: true}
-          break;
-        case "contact":
-          change = {about: true,portfolio: true, contact: true}
-          break;
-      }
-      await this.ActiveChange(change)
-      this.page = await value;
-      document.getElementById(this.page).scrollIntoView();
-    },
+    ...mapActions(["ActiveChange", "stateChange"]),
     handleScroll() {
       if (process.client) {
         const sticky = document.getElementById("sticky").offsetTop;
@@ -113,9 +93,9 @@ export default {
           this.vpage = "home";
         }
         if (window.pageYOffset > sticky) {
-          this.isActive = true;
+          this.stateChange({state:"isActive",value:true})
         } else {
-          this.isActive = false;
+          this.stateChange({state:"isActive",value:false})
         }
       }
     }

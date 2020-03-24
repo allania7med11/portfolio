@@ -1,53 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer
-      v-if="!$vuetify.breakpoint.smAndUp"
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      dark
-      fixed
-      app
-    >
-      <v-list class="pa-0">
-        <v-list-item class="pa-0 custom_cls">
-          <v-btn-toggle
-            class="toggleVertical text-left"
-            mandatory
-            group
-            :key="componentKey"
-            @change="fpage"
-            dark
-            v-model="pageN"
-            tile
-            borderless
-          >
-            <v-btn @click="fpageB('home')" class="ma-0" value="home">
-              <v-list-item >
-                <v-list-item-action>
-                <div>
-                  <!-- eslint-disable-next-line vue/html-self-closing -->
-                  <img  class="mr-3 responsive" src="~/assets/favicon.png" alt="EffectiveWebApp" />
-                  Home
-                </div>
-                </v-list-item-action>
-              </v-list-item>
-            </v-btn>
-            <v-btn v-for="pg in pages"  @click="fpageB(pg.name)"  :value="pg.name" class="ma-0" :key="pg.id">
-              <v-list-item>
-                <v-list-item-action>
-                <div>
-                 <Fas class="mr-4" :i="pg.icon" />{{ pg.name }}
-                </div>
-                </v-list-item-action>
-              </v-list-item>
-            </v-btn>
-          </v-btn-toggle>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <div :class="{ sticky: isActive }">
-      <v-toolbar dense dark>
+    <v-toolbar dense dark>
         <v-btn
           small
           fab
@@ -69,26 +22,25 @@
             tile
             borderless
           >
-            <v-btn @click="fpageB('home')" class="ma-0" value="home">
+            <v-btn  class="ma-0" value="home">
               <v-avatar>
                 <!-- eslint-disable-next-line vue/html-self-closing -->
                 <img class="pa-1" src="~/assets/favicon.png" alt="EffectiveWebApp" />
               </v-avatar>
               <span class="ml-2 font-weight-black font-italic">Home</span>
             </v-btn>
-            <v-btn @click="fpageB('about')" class="ma-0" value="about">
+            <v-btn  class="ma-0" value="about">
               <span>About</span>
             </v-btn>
-            <v-btn @click="fpageB('portfolio')" class="ma-0" value="portfolio">
+            <v-btn  class="ma-0" value="portfolio">
               <span>Portfolio</span>
             </v-btn>
-            <v-btn @click="fpageB('contact')" class="ma-0" value="contact">
+            <v-btn  class="ma-0" value="contact">
               <span>Contact</span>
             </v-btn>
           </v-btn-toggle>
         </v-toolbar-items>
       </v-toolbar>
-    </div>
   </div>
 </template>
 

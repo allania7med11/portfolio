@@ -8,7 +8,7 @@
               I'm a full-stack web developer from Tunis ,Kairouan.
               <br />I have a passion to solve difficult problems and make effective applications that make life of people easier.
               <br />
-              <v-btn small class="pl-0 text-center font-weight-bold blue--text" text @click="fpage('contact')"  >
+              <v-btn small class="pl-0 text-center font-weight-bold blue--text" text @click="pageChange('contact')"  >
                 Let's make something special.
               </v-btn>
             </v-card-subtitle>
@@ -63,31 +63,14 @@ export default {
     ]
   }),
   methods: {
-    ...mapActions(["ActiveChange"]),
-    async fpage(value) {
-      if (process.client) {
-        let change = {}
-        switch (value) {
-          case "about":
-            change = { about: true }
-            break;
-          case "portfolio":
-            change = {about: true,portfolio: true}
-            break;
-          case "contact":
-            change = {about: true,portfolio: true, contact: true}
-            break;
-        }
-        await this.ActiveChange(change)
-        document.getElementById( value ).scrollIntoView();
-      }
-    },
+    ...mapActions(["pageChange"]),
     visibilityChanged (isVisible, entry) {
       const l=this.skills.map(cv => Object.assign(cv, {rate: cv.value}))
       this.skills= l
     },
-  }
-};
+  },  
+}
+
 </script>
 
 <style>

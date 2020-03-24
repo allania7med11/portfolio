@@ -5,7 +5,7 @@
         <v-col>
           <h1 >Hello, I'm <span class="primary--text">Allani Ahmed</span></h1>
           <h1 >I'am a full-stack web developper</h1>
-          <v-btn @click="fpage('about')" class="ma-2" outlined color="white" >
+          <v-btn @click="pageChange('about')" class="ma-2" outlined color="white" >
             View my work<Fas class="ml-2" i="arrow-right" />
           </v-btn>
         </v-col>
@@ -13,13 +13,10 @@
   </v-container>
 </template>
 <script>
+import {  mapActions } from "vuex"
 export default {
   methods:{
-    fpage(name) {
-      if (process.client) {
-        document.getElementById( name ).scrollIntoView();
-      }
-    },
+    ...mapActions(["pageChange"])
   }
 }
 </script>
