@@ -60,7 +60,14 @@
                 @click="submit"
               >
                 Send Email
-                <Fas class="ml-2" i="paper-plane" />
+                <Fas v-if="!progress" class="ml-2" i="paper-plane" />
+                <v-progress-circular
+                  v-if="progress"
+                  dark
+                  class="ml-2"
+                  :size="20"
+                  indeterminate
+                />
               </v-btn>
             </v-card-actions>
           </v-card>
@@ -92,6 +99,7 @@ export default {
   },
 
   data: () => ({
+    progress: false,
     isActive1: false,
     from_email: "",
     subject: "",
@@ -126,6 +134,7 @@ export default {
     async submit() {
       this.$v.$touch()
       if (!this.$v.$invalid) {
+        this.progress = true
         this.success = false
         this.error = false
         try {
@@ -134,9 +143,11 @@ export default {
             subject: this.subject,
             message: this.message
           })
+          this.progress = false
           this.success = true
         } catch (e) {
           console.log(e)
+          this.progress = false
           this.error = true
         }
       }
