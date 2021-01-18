@@ -3,7 +3,7 @@
     <v-row>
       <v-col>
         <div
-          class="display-1 font-weight-bold text-center mb-4"
+          class="sectionName"
           style="text-decoration: underline;"
         >ABOUT</div>
       </v-col>
