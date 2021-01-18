@@ -9,7 +9,7 @@
       </client-only>
     </div>
     <v-container fluid class="full3-height ma-0 pa-0">
-      <div id="about" style="padding-top: 70px;" min-height="100vh">
+     <div id="about" style="padding-top: 70px;" min-height="100vh">
         <v-lazy v-model="Active['about']" :options="{threshold: .5}" min-height="200px">
           <about />
         </v-lazy>
@@ -34,23 +34,23 @@ import home from "~/components/home.vue";
 import about from "~/components/about.vue";
 import portfolio from "~/components/portfolio.vue";
 import contact from "~/components/contact.vue";
-import { mapState, mapActions } from "vuex"
+import { mapState, mapActions } from "vuex";
 export default {
   components: {
     Header,
     home,
     about,
     portfolio,
-    contact
+    contact,
   },
   data() {
     return {
       vpage: "home",
-      clipped: false,
+      clipped: false
     };
   },
   computed: {
-    ...mapState(["Active","page","isActive"])
+    ...mapState(["Active", "page", "isActive"]),
   },
   created() {
     if (process.client) {
@@ -70,10 +70,10 @@ export default {
       immediate: true,
       handler(val) {
         if (process.client) {
-          this.stateChange({state:"page",value:val})
+          this.stateChange({ state: "page", value: val });
         }
-      }
-    }
+      },
+    },
   },
   methods: {
     ...mapActions(["ActiveChange", "stateChange"]),
@@ -93,13 +93,13 @@ export default {
           this.vpage = "home";
         }
         if (window.pageYOffset > sticky) {
-          this.stateChange({state:"isActive",value:true})
+          this.stateChange({ state: "isActive", value: true });
         } else {
-          this.stateChange({state:"isActive",value:false})
+          this.stateChange({ state: "isActive", value: false });
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

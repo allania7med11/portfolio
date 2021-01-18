@@ -1,10 +1,9 @@
 <template>
   <v-row>
     <v-col cols="12">
-      <v-divider></v-divider>
       <div class="projectName">Structure Analysis Software</div>
     </v-col>
-    <v-col cols="12" md="6">
+    <v-col cols="12">
       <v-row>
         <v-container fluid>
           <v-row>
@@ -28,8 +27,8 @@
         </div>
       </v-row>
     </v-col>
-    <v-col cols="12" md="6">
-      <v-card class="grey lighten-2" flat>
+    <v-col cols="12" class="px-6">
+      <v-card >
         <v-card-title class="font-weight-bold blue--text"
           >Description</v-card-title
         >
