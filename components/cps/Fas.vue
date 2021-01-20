@@ -14,7 +14,8 @@ export default {
       type: String,
       required: false,
       default: "icon is-medium"
-    }
+    },
+    
   }
 }
 </script>

@@ -3,12 +3,67 @@
     <v-col cols="12">
       <div class="projectName">Structure Analysis Software</div>
     </v-col>
-    <v-col cols="12">
+    <v-col cols="12" class="px-6">
+      <v-card >
+        <v-card-subtitle class="font-weight-bold primary--text title"
+          >Technology</v-card-subtitle
+        >
+        <v-card-text class="pl-6">
+          <div>
+            <v-chip
+            color="primary"
+            text-color="white"
+            >
+              DRF
+            </v-chip>
+            <v-chip
+              color="primary"
+              text-color="white"
+            >
+              Nuxt
+            </v-chip>
+            <v-chip
+              color="primary"
+              text-color="white"
+            >
+              Vuetify
+            </v-chip>
+            <v-chip
+              color="primary"
+              text-color="white"
+            >
+              PWA
+            </v-chip>
+          </div>
+        </v-card-text>
+        <v-card-subtitle class="font-weight-bold primary--text title"
+          >Overview</v-card-subtitle
+        >
+        <v-card-text class="pl-6">
+          <p>
+            Structure Analysis is an improved  version from Legacy Structure Analysis where
+            I add many features to improve user experience such as :
+            <ul class="features">
+              <li>
+                <font-awesome-icon class="primary--text" icon="star" />
+                social login like facebook twitter and google for fast registration
+                and avoid password fatigue</li>
+              <li>
+                <font-awesome-icon class="primary--text" icon="star" />
+                offline support to check your project even when you are offline and go through calculated results</li>
+              <li>
+                <font-awesome-icon class="primary--text" icon="star" />
+                adding stress section to detailed analysis section to help structure engineers understand more the calculated results</li>
+            </ul>
+          </p>
+        </v-card-text>
+      </v-card>
+    </v-col>
+    <v-col cols="12" lg="5">
       <v-row>
         <v-container fluid>
-          <v-row>
-            <v-col cols="12">
-              <v-row align="center" justify="center">
+          <v-row align="center" justify="center">
+            <v-col cols="11">
                 <v-img
                   class="ml-2"
                   width="95%"
@@ -16,7 +71,6 @@
                   :style="imageHeight"
                   :src="items[page - 1].src"
                 />
-              </v-row>
             </v-col>
           </v-row>
         </v-container>
@@ -27,43 +81,7 @@
         </div>
       </v-row>
     </v-col>
-    <v-col cols="12" class="px-6">
-      <v-card >
-        <v-card-title class="font-weight-bold blue--text"
-          >Description</v-card-title
-        >
-        <v-card-text class="my-0 py-0">
-          We update our structure analysis software with the last technology to
-          optimize our application and improve user experience
-        </v-card-text>
-        <v-card-subtitle class="my-0 py-0 font-weight-bold green--text"
-          >Technology</v-card-subtitle
-        >
-        <v-card-text>
-          <p>
-            Django handle the back-end operations and provide the APIs using the
-            (DRF) Django Rest Framework, while Nuxt.js create the frontend.
-          </p>
-          <p>
-            <span class="font-weight-bold">- Nginx proxy:</span> We use Nginx
-            proxy to serve django and nuxt app with the same domain so we can
-            use session based authentication to authenticate user in both
-            backend and frontend apps
-          </p>
-          <p>
-            <span class="font-weight-bold">- Social login:</span> We provide
-            social login like facebook twitter and google for fast registration
-            and avoid password fatigue
-          </p>
-          <p>
-            <span class="font-weight-bold">- PWA:</span> Our website is also PWA
-            to improve loading time and work offline so user can see the
-            projects they visited in their devices without the need of any
-            connection then we use this technology to create android application
-          </p>
-        </v-card-text>
-      </v-card>
-    </v-col>
+    
     <v-col cols="12">
       <v-row align="center" justify="center">
         <div class="text-center">
@@ -125,6 +143,9 @@ export default {
 </script>
 
 <style lang="scss">
+ul.features {
+    list-style-type: none;
+}
 .sectionName {
   text-align: center;
   font-family: "Sansita Swashed";

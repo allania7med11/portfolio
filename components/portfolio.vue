@@ -50,9 +50,6 @@
         <component :is="currentComponent"></component>
       </v-card>
     </v-dialog>
-    <component is="currentComponent"></component>
-    <structure />
-    <legacystructure />
   </v-container>
 </template>
 
