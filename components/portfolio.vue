@@ -46,7 +46,7 @@
       </v-col>
     </v-row>
     <v-dialog v-model="dialog">
-      <v-card>
+      <v-card v-if="dialog">
         <component :is="currentComponent"></component>
       </v-card>
     </v-dialog>
