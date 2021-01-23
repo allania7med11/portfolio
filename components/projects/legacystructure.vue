@@ -81,36 +81,9 @@ export default {
         `Calculate and get all diagrams and equations of efforts,stress and displacements for each beam in the structure and a lot more...`,
         `Save all their work online to their account so no download required and they can access to all their projects anytime from any devices`,
         `Finding all the documentation needed from blogs to videos to use the software in the best way possible in all use cases`
-      ],
-      items: [
-        {
-          src: require("@/assets/structure/home.png"),
-        },
-        {
-          src: require("@/assets/structure/login.png"),
-        },
-        {
-          src: require("@/assets/structure/section.png"),
-        },
-        {
-          src: require("@/assets/structure/detail.png"),
-        },
-        {
-          src: require("@/assets/structure/offline.png"),
-        },
-      ],
+      ]
     };
-  },
-  computed: {
-    imageHeight() {
-      if (this.$vuetify.breakpoint.mdAndUp) {
-        return { height: "350px" };
-      } else if (this.$vuetify.breakpoint.smAndUp) {
-        return { height: "250px" };
-      }
-      return { height: "300px" };
-    },
-  },
+  }
 };
 </script>
 

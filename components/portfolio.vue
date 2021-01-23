@@ -10,7 +10,7 @@
     <v-row justify="space-around">
       <v-col v-for="(project, index) in projects" :key="index" md="4">
         <v-hover v-slot="{ hover }" open-delay="200">
-          <v-card :elevation="hover ? 8 : 4" outlined shaped>
+          <v-card :elevation="hover ? 8 : 4" outlined shaped style="height: 100%" >
             <v-img
               :src="require(`~/assets/${project.image}/entry.png`)"
               class="projectImage"
@@ -54,10 +54,12 @@
 </template>
 
 <script>
+import calculator from "~/components/projects/calculator.vue";
 import structure from "~/components/projects/structure.vue";
 import legacystructure from "~/components/projects/legacystructure.vue";
 export default {
   components: {
+    calculator,
     structure,
     legacystructure,
   },
@@ -66,6 +68,12 @@ export default {
       currentComponent: "structure",
       dialog: false,
       projects: [
+        {
+          value: "calculator",
+          image: "calculator",
+          name: "Effective Online Calculator",
+          technology: "Vue/MathJS",
+        },
         {
           value: "structure",
           image: "structure",
@@ -94,8 +102,8 @@ export default {
 };
 </script>
 <style scoped>
-img {
-  height: 50%;
+.projectImage {
+  height: 100%;
 }
 .centered-axis-xy {
   position: absolute;
