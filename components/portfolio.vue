@@ -54,11 +54,13 @@
 </template>
 
 <script>
+import discovertunisia from "~/components/projects/discovertunisia.vue";
 import calculator from "~/components/projects/calculator.vue";
 import structure from "~/components/projects/structure.vue";
 import legacystructure from "~/components/projects/legacystructure.vue";
 export default {
   components: {
+    discovertunisia,
     calculator,
     structure,
     legacystructure,
@@ -68,6 +70,12 @@ export default {
       currentComponent: "structure",
       dialog: false,
       projects: [
+        {
+          value: "discovertunisia",
+          image: "discovertunisia",
+          name: "Discover Tunisia",
+          technology: "Html/Css",
+        },
         {
           value: "calculator",
           image: "calculator",
