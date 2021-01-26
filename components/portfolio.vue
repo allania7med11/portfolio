@@ -23,7 +23,7 @@
             style="height: 100%"
           >
             <v-img
-              :src="require(`~/assets/${project.image}/entry.png`)"
+              :src="require(`~/assets/${project.image}`)"
               class="projectImage"
             >
               <div
@@ -89,43 +89,43 @@ export default {
       projects: [
         {
           value: "naturalLanguageProcessing",
-          image: "naturalLanguageProcessing",
+          image: "naturalLanguageProcessing/entry.jpeg",
           name: "Natural Language Processing",
           technology: "Express/Webpack",
         },
         {
           value: "zipweather",
-          image: "zipweather",
+          image: "zipweather/entry.png",
           name: "Zip Weather",
           technology: "Node/Express",
         },
         {
           value: "bestElectricBike",
-          image: "bestElectricBike",
+          image: "bestElectricBike/entry.png",
           name: "Best Electric Bike",
           technology: "Javascript/GIMP",
         },
         {
           value: "discovertunisia",
-          image: "discovertunisia",
+          image: "discovertunisia/entry.png",
           name: "Discover Tunisia",
           technology: "Html/Css",
         },
         {
           value: "calculator",
-          image: "calculator",
+          image: "calculator/entry.jpeg",
           name: "Effective Online Calculator",
           technology: "Vue/MathJS",
         },
         {
           value: "structure",
-          image: "structure",
+          image: "structure/entry.png",
           name: "Structure Analysis",
           technology: "Django/Vue",
         },
         {
           value: "legacystructure",
-          image: "legacystructure",
+          image: "legacystructure/entry.jpeg",
           name: "Legacy Structure Analysis",
           technology: "Django/Bootstrap",
         },
