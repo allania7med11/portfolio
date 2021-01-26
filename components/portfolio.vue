@@ -65,6 +65,7 @@
 </template>
 
 <script>
+import naturalLanguageProcessing from "~/components/projects/naturalLanguageProcessing.vue";
 import zipweather from "~/components/projects/zipweather.vue";
 import bestElectricBike from "~/components/projects/bestElectricBike.vue";
 import discovertunisia from "~/components/projects/discovertunisia.vue";
@@ -73,6 +74,7 @@ import structure from "~/components/projects/structure.vue";
 import legacystructure from "~/components/projects/legacystructure.vue";
 export default {
   components: {
+    naturalLanguageProcessing,
     zipweather,
     bestElectricBike,
     discovertunisia,
@@ -85,6 +87,12 @@ export default {
       currentComponent: "structure",
       dialog: false,
       projects: [
+        {
+          value: "naturalLanguageProcessing",
+          image: "naturalLanguageProcessing",
+          name: "Natural Language Processing",
+          technology: "Express/Webpack",
+        },
         {
           value: "zipweather",
           image: "zipweather",
