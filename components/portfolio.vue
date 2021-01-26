@@ -8,9 +8,20 @@
       </v-col>
     </v-row>
     <v-row justify="space-around">
-      <v-col v-for="(project, index) in projects" :key="index" md="4">
+      <v-col
+        v-for="(project, index) in projects"
+        :key="index"
+        md="4"
+        sm="6"
+        xs="12"
+      >
         <v-hover v-slot="{ hover }" open-delay="200">
-          <v-card :elevation="hover ? 8 : 4" outlined shaped style="height: 100%" >
+          <v-card
+            :elevation="hover ? 8 : 4"
+            outlined
+            shaped
+            style="height: 100%"
+          >
             <v-img
               :src="require(`~/assets/${project.image}/entry.png`)"
               class="projectImage"
@@ -54,6 +65,7 @@
 </template>
 
 <script>
+import zipweather from "~/components/projects/zipweather.vue";
 import bestElectricBike from "~/components/projects/bestElectricBike.vue";
 import discovertunisia from "~/components/projects/discovertunisia.vue";
 import calculator from "~/components/projects/calculator.vue";
@@ -61,6 +73,7 @@ import structure from "~/components/projects/structure.vue";
 import legacystructure from "~/components/projects/legacystructure.vue";
 export default {
   components: {
+    zipweather,
     bestElectricBike,
     discovertunisia,
     calculator,
@@ -72,6 +85,12 @@ export default {
       currentComponent: "structure",
       dialog: false,
       projects: [
+        {
+          value: "zipweather",
+          image: "zipweather",
+          name: "Zip Weather",
+          technology: "Node/Express",
+        },
         {
           value: "bestElectricBike",
           image: "bestElectricBike",
