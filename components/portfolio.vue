@@ -54,12 +54,14 @@
 </template>
 
 <script>
+import bestElectricBike from "~/components/projects/bestElectricBike.vue";
 import discovertunisia from "~/components/projects/discovertunisia.vue";
 import calculator from "~/components/projects/calculator.vue";
 import structure from "~/components/projects/structure.vue";
 import legacystructure from "~/components/projects/legacystructure.vue";
 export default {
   components: {
+    bestElectricBike,
     discovertunisia,
     calculator,
     structure,
@@ -70,6 +72,12 @@ export default {
       currentComponent: "structure",
       dialog: false,
       projects: [
+        {
+          value: "bestElectricBike",
+          image: "bestElectricBike",
+          name: "Best Electric Bike",
+          technology: "Javascript/GIMP",
+        },
         {
           value: "discovertunisia",
           image: "discovertunisia",
