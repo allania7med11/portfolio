@@ -1,40 +1,66 @@
 <template>
   <v-row no-gutters align="start" justify="start">
-      <v-col cols="12" sm="5">
-          <v-card data-aos="fade-right" class="text-center" flat>
-            <img height="200px" :src="require('@/assets/profile.png')" />
-            <v-card-title class="justify-center">Who's this guy?</v-card-title>
-            <v-card-subtitle class="justify-center">
-              I'm a full-stack web developer from Tunis ,Kairouan.
-              <br />I have a passion to solve difficult problems and make effective applications that make life of people easier.
-              <br />
-              <v-btn small class="pl-0 text-center font-weight-bold blue--text" text @click="pageChange('contact')"  >
-                Let's make something special.
-              </v-btn>
-            </v-card-subtitle>
-          </v-card>
-      </v-col>
-      <v-col cols="12" sm="7" >
-        <v-card  data-aos="fade-left" class="text-center" flat>
-          <v-row  stretch v-observe-visibility="visibilityChanged" v-for="(value, key) in skills" class="my-4" no-gutters v-bind:key="key">
-            <v-col>
-              <div class="text-center blue darken-1 white--text">
-                <span class="body-2 font-weight-bold px-1">{{ value.name }}</span></div>
-            </v-col>
-            <v-col >
-              <div style="height:100%" class="grey lighten-3">
-                <div style="height:100%"  :style="{ width : value.rate, transition: 'width 2s' }" class="blue darken-4">&nbsp;</div>
+    <v-col cols="12" sm="5">
+      <v-card data-aos="fade-right" class="text-center" flat>
+        <img height="200px" :src="require('@/assets/profile.png')" />
+        <v-card-title class="justify-center">Who's this guy?</v-card-title>
+        <v-card-subtitle class="justify-center">
+          I'm a full-stack web developer from Tunis ,Kairouan.
+          <br />I have a passion to solve difficult problems and make effective
+          applications that make life of people easier.
+          <br />
+          <v-btn
+            small
+            class="pl-0 text-center font-weight-bold blue--text"
+            text
+            @click="pageChange('contact')"
+          >
+            Let's make something special.
+          </v-btn>
+        </v-card-subtitle>
+      </v-card>
+    </v-col>
+    <v-col cols="12" sm="7">
+      <v-card
+        data-aos="fade-left"
+        v-observe-visibility="visibilityChanged"
+        class="text-center"
+        flat
+      >
+        <v-row
+          stretch
+          v-for="(value, key) in skills"
+          class="my-4"
+          no-gutters
+          v-bind:key="key"
+        >
+          <v-col>
+            <div class="text-center blue darken-1 white--text">
+              <span class="body-2 font-weight-bold px-1">{{ value.name }}</span>
+            </div>
+          </v-col>
+          <v-col>
+            <div style="height: 100%" class="grey lighten-3">
+              <div
+                style="height: 100%;transition: width 2s;transition-delay: 1s;"
+                :style="{ width: isVisible ? value.value : '0%' }"
+                class="blue darken-4"
+              >
+                &nbsp;
               </div>
-            </v-col>
-            <v-col cols="1">
-              <div style="height:100%" class="text-center grey lighten-2 text-right grey--text--lighten-1">
-                <span class="body-2">{{ value.value }}</span>
-              </div>
-            </v-col>
-          </v-row>
-        </v-card>
-      </v-col>
-    </v-row>
+            </div>
+          </v-col>
+          <v-col cols="1">
+            <div
+              class="text-center grey lighten-2 text-right grey--text--lighten-1"
+            >
+              <span class="body-2">{{ value.value }}</span>
+            </div>
+          </v-col>
+        </v-row>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
@@ -65,12 +91,13 @@ export default {
   methods: {
     ...mapActions(["pageChange"]),
     visibilityChanged(isVisible, entry) {
-      const l = this.skills.map((cv) => Object.assign(cv, { rate: cv.value }));
-      this.skills = l;
+      this.isVisible = isVisible;
+      console.log({ isVisible });
     },
   },
 };
 </script>
 
 <style>
+
 </style>

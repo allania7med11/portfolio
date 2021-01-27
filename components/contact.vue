@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="white--text px-5 ma-0 text-center">
+  <v-container fluid class="white--text px-5 ma-0 text-center" >
     <v-row>
       <v-col>
         <div
@@ -11,14 +11,15 @@
       </v-col>
     </v-row>
       <v-row justify="center">
-        <v-col md="8">
+        <v-col md="8" >
+          <div data-aos="zoom-in-up">
           <v-alert v-if="success" dismissible type="success">
             Success! Email sent.
           </v-alert>
           <v-alert v-if="error" dismissible type="error">
             An error occurred
           </v-alert>
-          <v-card data-aos="zoom-in" flat text class="grey darken-4 white--text px-3 ma-0 text-center">
+          <v-card  flat text class="grey darken-4 white--text px-3 ma-0 text-center">
             <v-card-text>
               <form>
                 <v-text-field
@@ -71,6 +72,7 @@
               </v-btn>
             </v-card-actions>
           </v-card>
+          </div>
         </v-col>
       </v-row>
   </v-container>

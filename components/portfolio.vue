@@ -11,6 +11,7 @@
       <v-col
         v-for="(project, index) in projects"
         :key="index"
+        data-aos="fade-up"
         md="4"
         sm="6"
         xs="12"
