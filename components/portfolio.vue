@@ -59,94 +59,83 @@
     </v-row>
     <v-dialog v-model="dialog">
       <v-card v-if="dialog">
-        <span class="close"   @click="dialog=false">
+        <span class="close" @click="dialog = false">
           <Fas i="times" />
         </span>
-        <component :is="currentComponent"></component>
+        <project v-if="project" :project="project" />
       </v-card>
     </v-dialog>
   </v-container>
 </template>
 
 <script>
-import travelPlanning from "~/components/projects/travelPlanning.vue";
-import naturalLanguageProcessing from "~/components/projects/naturalLanguageProcessing.vue";
-import zipweather from "~/components/projects/zipweather.vue";
-import bestElectricBike from "~/components/projects/bestElectricBike.vue";
-import discovertunisia from "~/components/projects/discovertunisia.vue";
-import calculator from "~/components/projects/calculator.vue";
-import structure from "~/components/projects/structure.vue";
-import legacystructure from "~/components/projects/legacystructure.vue";
+import project from "~/components/portfolio/project.vue";
+import projects from "~/data/projects";
 export default {
   components: {
-    travelPlanning,
-    naturalLanguageProcessing,
-    zipweather,
-    bestElectricBike,
-    discovertunisia,
-    calculator,
-    structure,
-    legacystructure,
+    project,
   },
   data() {
     return {
       currentComponent: "structure",
       dialog: false,
-      projects: [
-        {
-          value: "travelPlanning",
-          image: "travelPlanning/entry.png",
-          name: "Travel Planning",
-          technology: "Express/Webpack",
-        },
-        {
-          value: "naturalLanguageProcessing",
-          image: "naturalLanguageProcessing/entry.png",
-          name: "Natural Language Processing",
-          technology: "Express/Webpack",
-        },
-        {
-          value: "zipweather",
-          image: "zipweather/entry.png",
-          name: "Zip Weather",
-          technology: "Node/Express",
-        },
-        {
-          value: "bestElectricBike",
-          image: "bestElectricBike/entry.png",
-          name: "Best Electric Bike",
-          technology: "Javascript/GIMP",
-        },
-        {
-          value: "discovertunisia",
-          image: "discovertunisia/entry.png",
-          name: "Discover Tunisia",
-          technology: "Html/Css",
-        },
-        {
-          value: "calculator",
-          image: "calculator/entry.png",
-          name: "Effective Online Calculator",
-          technology: "Vue/MathJS",
-        },
-        {
-          value: "structure",
-          image: "structure/entry.png",
-          name: "Structure Analysis",
-          technology: "Django/Vue",
-        },
-        {
-          value: "legacystructure",
-          image: "legacystructure/entry.png",
-          name: "Legacy Structure Analysis",
-          technology: "Django/Bootstrap",
-        },
-      ],
+      projects: projects,
+      project: false,
+      // projects: [
+      //   {
+      //     value: "travelPlanning",
+      //     image: "travelPlanning/entry.png",
+      //     name: "Travel Planning",
+      //     technology: "Express/Webpack",
+      //   },
+      //   {
+      //     value: "naturalLanguageProcessing",
+      //     image: "naturalLanguageProcessing/entry.png",
+      //     name: "Natural Language Processing",
+      //     technology: "Express/Webpack",
+      //   },
+      //   {
+      //     value: "zipweather",
+      //     image: "zipweather/entry.png",
+      //     name: "Zip Weather",
+      //     technology: "Node/Express",
+      //   },
+      //   {
+      //     value: "bestElectricBike",
+      //     image: "bestElectricBike/entry.png",
+      //     name: "Best Electric Bike",
+      //     technology: "Javascript/GIMP",
+      //   },
+      //   {
+      //     value: "discovertunisia",
+      //     image: "discovertunisia/entry.png",
+      //     name: "Discover Tunisia",
+      //     technology: "Html/Css",
+      //   },
+      //   {
+      //     value: "calculator",
+      //     image: "calculator/entry.png",
+      //     name: "Effective Online Calculator",
+      //     technology: "Vue/MathJS",
+      //   },
+      //   {
+      //     value: "structure",
+      //     image: "structure/entry.png",
+      //     name: "Structure Analysis",
+      //     technology: "Django/Vue",
+      //   },
+      //   {
+      //     value: "legacystructure",
+      //     image: "legacystructure/entry.png",
+      //     name: "Legacy Structure Analysis",
+      //     technology: "Django/Bootstrap",
+      //   },
+      // ],
     };
   },
   methods: {
     openProject(project) {
-      this.currentComponent = project.value;
+      this.project = project;
       this.dialog = true;
     },
     cardColor(hover) {
@@ -164,7 +153,7 @@ export default {
   padding-right: 20px;
   color: gainsboro;
 }
-.close:hover{
+.close:hover {
   color: black;
 }
 .projectImage {

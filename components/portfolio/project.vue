@@ -33,30 +33,50 @@
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col cols="12" lg="5">
-      <v-row>
-        <v-container fluid>
-          <v-row align="center" justify="center">
-            <v-col cols="11">
-              <v-img
-                class="ml-2"
-                width="95%"
-                contain
-                :style="imageHeight"
-                :src="project.images[page - 1].src"
-              />
-            </v-col>
-          </v-row>
-        </v-container>
-      </v-row>
-      <v-row align="center" justify="center">
-        <div class="text-center">
-          <v-pagination
-            v-model="page"
-            :length="project.images.length"
-          ></v-pagination>
-        </div>
-      </v-row>
+    <v-col cols="12">
+      <template v-if="project.images">
+        <v-row>
+          <v-container fluid>
+            <v-row align="center" justify="center">
+              <v-col cols="11">
+                <v-img
+                  class="ml-2"
+                  width="95%"
+                  contain
+                  :style="imageHeight"
+                  :src="project.images[page - 1].src"
+                />
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-row>
+        <v-row align="center" justify="center">
+          <div class="text-center">
+            <v-pagination
+              v-model="page"
+              :length="project.images.length"
+            ></v-pagination>
+          </div>
+        </v-row>
+      </template>
+      <template v-if="project.video">
+        <v-row>
+          <v-container fluid>
+            <v-row align="center" justify="center">
+              <v-col cols="11">
+                <iframe
+                  title="Effective Web App | Free Online Structure Analysis Software"
+                  width="95%"
+                  height="343"
+                  :src="project.video"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-row>
+      </template>
     </v-col>
 
     <v-col cols="12">
@@ -65,7 +85,7 @@
           <v-btn
             v-for="(action, index) in project.actions"
             :key="index"
-            class="font-weight-bold mx-2"
+            class="font-weight-bold ma-5"
             color="success"
             target="_blank"
             :href="action.href"
@@ -79,41 +99,10 @@
 
 <script>
 export default {
+  props: ["project"],
   data() {
     return {
       page: 1,
-      project: {
-        name: "Best Electric Bike",
-        technologies: ["GitHub Pages", "Html", "Css", "Javascript", "GIMP"],
-        overview: `This website is for for marketing JD-20A06 Electric Bike and convert
-          visitors to buyers by shown them:`,
-        features: [
-          `Features for the product like speed , range ,load capacity...`,
-          `Reviews from verified buyers and their experience with the product`,
-          `Special offer with different choices for limited period of time and call to action`,
-        ],
-        images: [
-          {
-            src: require("@/assets/bestElectricBike/features.png"),
-          },
-          {
-            src: require("@/assets/bestElectricBike/reviews.png"),
-          },
-          {
-            src: require("@/assets/bestElectricBike/offer.png"),
-          },
-        ],
-        actions: [
-          {
-            text: "Visit Website",
-            href: "https://allania7med11.github.io/DeployLandingPage/",
-          },
-          {
-            text: "View on Github",
-            href: "https://github.com/allania7med11/BestElectricBike/",
-          },
-        ],
-      },
     };
   },
   computed: {

@@ -65,7 +65,7 @@
           <v-btn
             v-for="(action, index) in project.actions"
             :key="index"
-            class="font-weight-bold mx-2"
+            class="font-weight-bold"
             color="success"
             target="_blank"
             :href="action.href"
