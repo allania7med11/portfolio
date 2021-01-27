@@ -12,7 +12,7 @@
     </v-row>
       <v-row justify="center">
         <v-col md="8" >
-          <div data-aos="zoom-in-up">
+          <div data-aos="zoom-in-up" data-aos-delay="1000" data-aos-duration="1000">
           <v-alert v-if="success" dismissible type="success">
             Success! Email sent.
           </v-alert>

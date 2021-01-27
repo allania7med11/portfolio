@@ -59,6 +59,9 @@
     </v-row>
     <v-dialog v-model="dialog">
       <v-card v-if="dialog">
+        <span class="close"   @click="dialog=false">
+          <Fas i="times" />
+        </span>
         <component :is="currentComponent"></component>
       </v-card>
     </v-dialog>
@@ -154,6 +157,16 @@ export default {
 };
 </script>
 <style scoped>
+.close {
+  position: absolute;
+  right: 0;
+  padding-top: 10px;
+  padding-right: 20px;
+  color: gainsboro;
+}
+.close:hover{
+  color: black;
+}
 .projectImage {
   height: 100%;
 }
