@@ -66,14 +66,14 @@
             class="font-weight-bold"
             color="success"
             target="_blank"
-            href="https://naturalanguageprocessing.herokuapp.com/"
+            href="https://triplanning.herokuapp.com/"
             >Visit Website</v-btn
           >
           <v-btn
             class="font-weight-bold"
             color="success"
             target="_blank"
-            href="https://github.com/allania7med11/NaturalLanguageProcessing"
+            href="https://github.com/allania7med11/TravelPlanner"
             >View on Github</v-btn
           >
         </div>
@@ -96,10 +96,19 @@ export default {
       ],
       items: [
         {
-          src: require("@/assets/naturalLanguageProcessing/form.png"),
+          src: require("@/assets/travelPlanning/form.png"),
         },
         {
-          src: require("@/assets/naturalLanguageProcessing/show.png"),
+          src: require("@/assets/travelPlanning/img.png"),
+        },
+        {
+          src: require("@/assets/travelPlanning/tmp.png"),
+        },
+        {
+          src: require("@/assets/travelPlanning/prep.png"),
+        },
+        {
+          src: require("@/assets/travelPlanning/history.png"),
         },
       ],
     };

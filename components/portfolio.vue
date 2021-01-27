@@ -65,6 +65,7 @@
 </template>
 
 <script>
+import travelPlanning from "~/components/projects/travelPlanning.vue";
 import naturalLanguageProcessing from "~/components/projects/naturalLanguageProcessing.vue";
 import zipweather from "~/components/projects/zipweather.vue";
 import bestElectricBike from "~/components/projects/bestElectricBike.vue";
@@ -74,6 +75,7 @@ import structure from "~/components/projects/structure.vue";
 import legacystructure from "~/components/projects/legacystructure.vue";
 export default {
   components: {
+    travelPlanning,
     naturalLanguageProcessing,
     zipweather,
     bestElectricBike,
@@ -88,8 +90,14 @@ export default {
       dialog: false,
       projects: [
         {
+          value: "travelPlanning",
+          image: "travelPlanning/entry.png",
+          name: "Travel Planning",
+          technology: "Express/Webpack",
+        },
+        {
           value: "naturalLanguageProcessing",
-          image: "naturalLanguageProcessing/entry.jpeg",
+          image: "naturalLanguageProcessing/entry.png",
           name: "Natural Language Processing",
           technology: "Express/Webpack",
         },
@@ -113,7 +121,7 @@ export default {
         },
         {
           value: "calculator",
-          image: "calculator/entry.jpeg",
+          image: "calculator/entry.png",
           name: "Effective Online Calculator",
           technology: "Vue/MathJS",
         },
@@ -125,7 +133,7 @@ export default {
         },
         {
           value: "legacystructure",
-          image: "legacystructure/entry.jpeg",
+          image: "legacystructure/entry.png",
           name: "Legacy Structure Analysis",
           technology: "Django/Bootstrap",
         },
