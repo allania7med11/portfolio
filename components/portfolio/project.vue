@@ -65,7 +65,7 @@
             <v-row align="center" justify="center">
               <v-col cols="11">
                 <iframe
-                  title="Effective Web App | Free Online Structure Analysis Software"
+                  :title="project.name"
                   width="95%"
                   height="343"
                   :src="project.video"

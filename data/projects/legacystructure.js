@@ -2,7 +2,7 @@ export default {
     name: "Legacy Structure Analysis Software",
     technology: "Django/Bootstrap",
     image: "legacystructure/entry.png",
-    technologies: ["Django", "Bootstrap", "JQuery", "Filmora"],
+    technologies: ["Digital Ocean","Django", "Bootstrap", "JQuery", "Filmora"],
     overview: `Legacy Structure Analysis in an online software created by engineer for engineers with many
     features to make their work more effective such as:`,
     features: [

@@ -81,56 +81,6 @@ export default {
       dialog: false,
       projects: projects,
       project: false,
-      // projects: [
-      //   {
-      //     value: "travelPlanning",
-      //     image: "travelPlanning/entry.png",
-      //     name: "Travel Planning",
-      //     technology: "Express/Webpack",
-      //   },
-      //   {
-      //     value: "naturalLanguageProcessing",
-      //     image: "naturalLanguageProcessing/entry.png",
-      //     name: "Natural Language Processing",
-      //     technology: "Express/Webpack",
-      //   },
-      //   {
-      //     value: "zipweather",
-      //     image: "zipweather/entry.png",
-      //     name: "Zip Weather",
-      //     technology: "Node/Express",
-      //   },
-      //   {
-      //     value: "bestElectricBike",
-      //     image: "bestElectricBike/entry.png",
-      //     name: "Best Electric Bike",
-      //     technology: "Javascript/GIMP",
-      //   },
-      //   {
-      //     value: "discovertunisia",
-      //     image: "discovertunisia/entry.png",
-      //     name: "Discover Tunisia",
-      //     technology: "Html/Css",
-      //   },
-      //   {
-      //     value: "calculator",
-      //     image: "calculator/entry.png",
-      //     name: "Effective Online Calculator",
-      //     technology: "Vue/MathJS",
-      //   },
-      //   {
-      //     value: "structure",
-      //     image: "structure/entry.png",
-      //     name: "Structure Analysis",
-      //     technology: "Django/Vue",
-      //   },
-      //   {
-      //     value: "legacystructure",
-      //     image: "legacystructure/entry.png",
-      //     name: "Legacy Structure Analysis",
-      //     technology: "Django/Bootstrap",
-      //   },
-      // ],
     };
   },
   methods: {
