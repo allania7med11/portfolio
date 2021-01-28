@@ -12,19 +12,19 @@ export default {
   ],
   images: [
     {
-      src: require("@/assets/travelPlanning/form.png")
+      src: require("@/assets/images/travelPlanning/form.png")
     },
     {
-      src: require("@/assets/travelPlanning/img.png")
+      src: require("@/assets/images/travelPlanning/img.png")
     },
     {
-      src: require("@/assets/travelPlanning/tmp.png")
+      src: require("@/assets/images/travelPlanning/tmp.png")
     },
     {
-      src: require("@/assets/travelPlanning/prep.png")
+      src: require("@/assets/images/travelPlanning/prep.png")
     },
     {
-      src: require("@/assets/travelPlanning/history.png")
+      src: require("@/assets/images/travelPlanning/history.png")
     }
   ],
   actions: [

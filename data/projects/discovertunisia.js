@@ -11,16 +11,16 @@ export default {
     ],
     images: [
         {
-          src: require("@/assets/discovertunisia/home.png"),
+          src: require("@/assets/images/discovertunisia/home.png"),
         },
         {
-          src: require("@/assets/discovertunisia/tabarka.png"),
+          src: require("@/assets/images/discovertunisia/tabarka.png"),
         },
         {
-          src: require("@/assets/discovertunisia/djerba.png"),
+          src: require("@/assets/images/discovertunisia/djerba.png"),
         },
         {
-          src: require("@/assets/discovertunisia/south.png"),
+          src: require("@/assets/images/discovertunisia/south.png"),
         }
       ],
     actions: [

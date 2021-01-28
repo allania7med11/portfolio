@@ -12,13 +12,13 @@ export default {
   ],
   images: [
     {
-      src: require("@/assets/bestElectricBike/features.png")
+      src: require("@/assets/images/bestElectricBike/features.png")
     },
     {
-      src: require("@/assets/bestElectricBike/reviews.png")
+      src: require("@/assets/images/bestElectricBike/reviews.png")
     },
     {
-      src: require("@/assets/bestElectricBike/offer.png")
+      src: require("@/assets/images/bestElectricBike/offer.png")
     }
   ],
   actions: [

@@ -10,10 +10,10 @@ export default {
   ],
   images: [
     {
-      src: require("@/assets/zipweather/get.png"),
+      src: require("@/assets/images/zipweather/get.png"),
     },
     {
-      src: require("@/assets/zipweather/show.png"),
+      src: require("@/assets/images/zipweather/show.png"),
     }
   ],
   actions: [

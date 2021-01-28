@@ -2,7 +2,7 @@
   <v-row no-gutters align="start" justify="start">
     <v-col cols="12" sm="5">
       <v-card data-aos="fade-right" class="text-center" flat>
-        <img height="200px" :src="require('@/assets/profile.png')" />
+        <img height="200px" :src="require('@/assets/images/profile.png')" />
         <v-card-title class="justify-center">Who's this guy?</v-card-title>
         <v-card-subtitle class="justify-center">
           I'm a full-stack web developer from Tunis ,Kairouan.

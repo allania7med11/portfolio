@@ -14,10 +14,10 @@ export default {
   ],
   images: [
     {
-      src: require("@/assets/naturalLanguageProcessing/form.png")
+      src: require("@/assets/images/naturalLanguageProcessing/form.png")
     },
     {
-      src: require("@/assets/naturalLanguageProcessing/show.png")
+      src: require("@/assets/images/naturalLanguageProcessing/show.png")
     }
   ],
   actions: [

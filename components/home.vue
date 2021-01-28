@@ -22,7 +22,7 @@ export default {
 </script>
 <style scoped>
 .bgImgCenter{
-    background-image: url('~assets/home.png');
+    background-image: url('~assets/images/home.png');
     background-repeat: no-repeat;
     background-position: center center; 
     background-attachment: fixed;

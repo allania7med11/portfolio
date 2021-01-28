@@ -53,6 +53,7 @@ export default {
     ...mapState(["Active", "page", "isActive"]),
   },
   created() {
+    this.$vuetify.theme.dark = false
     if (process.client) {
       window.addEventListener("scroll", this.handleScroll);
     }

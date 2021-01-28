@@ -2,7 +2,7 @@
   <v-row no-gutters>
       <v-col v-for="(about, key) in abouts" cols="6" sm="3" v-bind:key="key">
         <v-card class="text-center" flat>
-          <img data-aos="flip-left" height="125px" :src="require(`@/assets/${about.img}.png`)" />
+          <img data-aos="flip-left" height="125px" :src="require(`@/assets/images/${about.img}.png`)" />
           <v-card-title data-aos="zoom-in" class="justify-center">{{ about.title }}</v-card-title>
           <v-card-subtitle data-aos="zoom-in" class="justify-center">{{ about.subtitle }}</v-card-subtitle>
         </v-card>

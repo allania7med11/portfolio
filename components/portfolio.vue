@@ -24,7 +24,7 @@
             style="height: 100%"
           >
             <v-img
-              :src="require(`~/assets/${project.image}`)"
+              :src="require(`~/assets/images/${project.image}`)"
               class="projectImage"
             >
               <div

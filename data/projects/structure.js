@@ -13,19 +13,19 @@ export default {
   ],
   images: [
     {
-      src: require("@/assets/structure/home.png"),
+      src: require("@/assets/images/structure/home.png"),
     },
     {
-      src: require("@/assets/structure/login.png"),
+      src: require("@/assets/images/structure/login.png"),
     },
     {
-      src: require("@/assets/structure/section.png"),
+      src: require("@/assets/images/structure/section.png"),
     },
     {
-      src: require("@/assets/structure/detail.png"),
+      src: require("@/assets/images/structure/detail.png"),
     },
     {
-      src: require("@/assets/structure/offline.png"),
+      src: require("@/assets/images/structure/offline.png"),
     },
   ],
   actions: [
