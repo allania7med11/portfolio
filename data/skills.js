@@ -1,9 +1,12 @@
 export default [
-  { name: "Html,Css,Javascript", rate: 4 },
-  { name: "ES6,Vue,Nuxt", rate: 4.5 },
-  { name: "Python,Django,DRF", rate: 4.5 },
-  { name: "Cypress,Pytest", rate: 3.5 },
-  { name: "SQL,Postgresql", rate: 4 },
-  { name: "Photoshop,Filmora", rate: 3.5 },
-  { name: "Matlab,Autocad,Autodesk Robot", rate: 4 }
+  { name: "Html/Css", value: "90%" },
+  { name: "Javascript/Node/Express", value: "80%" },
+  { name: "Python/Django/DRF", value: "90%" },
+  { name: "Vue/Vuetify/Nuxt", value: "85%" },
+  { name: "React/MATERIAL-UI", value: "85%" },
+  { name: "Angular/Bootstrap", value: "70%" },
+  { name: "SQL/Postgresql", value: "80%" },
+  { name: "NoSQL/Mongodb", value: "80%" },
+  { name: "Pytest/Cypress", value: "75%" },
+  { name: "Photoshop/Filmora", value: "60%" },
 ];

@@ -1,5 +1,6 @@
 export default {
   title: "Hacker in Residence",
+  image: require("@/assets/images/RBK.png"),
   type: "Full-time",
   company: "ReBootKamp (RBK) Tunisia",
   location: "Ariana Governorate, Tunisia",
