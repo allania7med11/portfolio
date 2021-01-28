@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex">
-    <div class="d-flex flex-column flex-grow-3 grey darken-3">
+    <div class="d-flex flex-column flex-grow-3 grey darken-3 py-4">
       <div class="d-flex flex-column text-center pa-4">
         <div class="display-1 font-weight-bold">
           {{ infos.name }}
@@ -23,19 +23,14 @@
       </div>
       <div class="d-flex flex-column">
         <div class="black px-2 py-4 title">Skills</div>
-        <div class="px-2 py-1" v-for="(value, key) in skills" v-bind:key="key">
-          <div class="subheading font-weight-bold">{{ value.name }}</div>
-          <v-rating
-            dark
-            :empty-icon="emptyIcon"
-            :full-icon="fullIcon"
-            :half-icon="halfIcon"
-            v-model="value.rate"
-            background-color="white lighten-3"
-            color="white"
-            half-increments
-            readonly
-          ></v-rating>
+        <div class="px-2 py-1" v-for="(skill, key) in skills" v-bind:key="key">
+          <div class="subheading font-weight-bold d-flex" style="justify-content:space-between">
+            <div>{{ skill.name }}</div>
+            <div>{{ skill.value }}</div>
+          </div>
+          <div class="progressbar">
+            <div :style="{ width: skill.value }"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -92,7 +87,6 @@ export default {
 </script>
 
 <style>
-
 .progressbar {
   background-color: black;
   border-radius: 13px;
@@ -100,11 +94,10 @@ export default {
   padding: 3px;
 }
 
-.progressbar>div {
+.progressbar > div {
   background-color: orange;
-  width: 40%;
   /* Adjust with JavaScript */
-  height: 20px;
-  border-radius: 10px;
+  height: 5px;
+  border-radius: 2px;
 }
 </style>

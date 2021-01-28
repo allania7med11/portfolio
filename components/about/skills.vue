@@ -64,8 +64,8 @@
 </template>
 
 <script>
-import features from "~/components/cps/features.vue";
-import skills from "~/components/cps/skills.vue";
+import features from "~/components/about/features.vue";
+import skills from "~/components/about/skills.vue";
 import { mapState, mapActions } from "vuex";
 export default {
   components: {
