@@ -1,5 +1,6 @@
 import RBK from './RBK'
-
+import EWA from './EWA'
 export default {
-    RBK
+    RBK,
+    EWA
 }

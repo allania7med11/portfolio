@@ -40,12 +40,12 @@
       </div>
       <div class="d-flex flex-column">
         <v-divider></v-divider>
-        <div class="py-2 title">Experience</div>
+        <div class="py-3 title">Experience</div>
         <v-divider></v-divider>
         <div
           v-for="experience in experiences"
           v-bind:key="experience.id"
-          class="d-flex"
+          class="d-flex my-2"
         >
           <div class="d-flex flex-column flex-grow-2 pa-2">
             <img height="50px" :src="experience.image" />
@@ -63,6 +63,34 @@
           </div>
         </div>
       </div>
+      <div class="d-flex flex-column">
+        <v-divider></v-divider>
+        <div class="py-3 title">Education</div>
+        <v-divider></v-divider>
+        <div
+          v-for="education in educations"
+          v-bind:key="education.id"
+          class="d-flex my-2"
+        >
+          <div class="d-flex flex-column flex-grow-2 pa-2">
+            <img height="50px" :src="education.image" />
+          </div>
+          <div class="d-flex flex-column flex-grow-10">
+            <div class="title pt-1">
+              {{ education.school }}
+            </div>
+            <div class="subtitle-2">
+              {{ education.degree }}{{ education.field }}
+            </div>
+            <div class="subtitle-2">
+              {{ education.dates.start }}-{{ education.dates.end }}
+            </div>
+            <div class="py-2">
+              {{ education.description }}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -71,14 +99,16 @@
 import infos from "~/data/infos";
 import skills from "~/data/skills";
 import experiences from "~/data/experiences";
+import educations from "~/data/educations";
 export default {
   data: () => ({
     emptyIcon: "mdi-star-outline",
     fullIcon: "mdi-star",
     halfIcon: "mdi-star-half-full",
-    infos: infos,
-    skills: skills,
-    experiences: experiences,
+    infos,
+    skills,
+    experiences,
+    educations
   }),
   created() {
     this.$vuetify.theme.dark = true;
