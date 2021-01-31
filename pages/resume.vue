@@ -1,13 +1,13 @@
 <template>
   <div class="d-flex">
-    <div class="d-flex flex-column flex-grow-3 grey darken-3 py-4">
-      <div class="d-flex flex-column text-center pa-4">
+    <div class="d-flex flex-column flex-grow-2 grey darken-3 py-4">
+      <div class="d-flex flex-column text-center pa-4 text-no-wrap">
         <div class="display-1 font-weight-bold">
           {{ infos.name }}
         </div>
         <div class="title">{{ infos.profession }}</div>
         <div class="py-2">
-          <img height="250px" :src="infos.image" />
+          <img height="200px" :src="infos.image" />
         </div>
       </div>
       <div class="d-flex flex-column">
@@ -34,7 +34,7 @@
         </div>
       </div>
     </div>
-    <div class="d-flex flex-column flex-grow-9 ma-4">
+    <div class="d-flex flex-column flex-grow-10 ma-4">
       <div class="my-2">
         {{ infos.about }}
       </div>
