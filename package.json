@@ -5,7 +5,7 @@
   "author": "allania7med11",
   "private": true,
   "scripts": {
-    "dev": "nuxt  --port 4000",
+    "dev": "nuxt  --port 4010",
     "build": "nuxt build",
     "start": "nuxt start --port 4000",
     "generate": "nuxt generate"
