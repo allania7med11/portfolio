@@ -31,11 +31,7 @@ export default {
   actions: [
     {
       text: "Visit Website",
-      href: "https://effectivewebapp.com/"
-    },
-    {
-      text: "Go to App",
-      href: "https://play.google.com/store/apps/details?id=com.effectivewebapp"
+      href: "https://structure.effectivewebapp.com/"
     }
   ]
 };
