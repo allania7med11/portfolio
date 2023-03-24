@@ -1,6 +1,6 @@
 # portfolio
 
-> My first-class Portfolio project
+> My Portfolio project
 
 ## Build Setup
 
