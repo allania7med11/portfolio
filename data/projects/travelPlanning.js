@@ -30,7 +30,7 @@ export default {
   actions: [
     {
       text: "Visit Website",
-      href: "https://triplanning.herokuapp.com/"
+      href: "https://travelplanner.effectivewebapp.com/"
     },
     {
       text: "View on Github",
