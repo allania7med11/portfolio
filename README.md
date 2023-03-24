@@ -1,6 +1,6 @@
 # portfolio
 
-> My first-class Nuxt.js project
+> My first-class Portfolio project
 
 ## Build Setup
 
