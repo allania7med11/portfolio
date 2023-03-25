@@ -37,6 +37,10 @@ export default {
     {
       text: "Visit Website",
       href: "https://structure.effectivewebapp.com/"
+    },
+    {
+      text: "View on Github",
+      href: "https://github.com/allania7med11/structure_back/"
     }
   ]
 };
