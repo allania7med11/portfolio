@@ -14,10 +14,10 @@ export default {
   ],
   images: [
     {
-      src: require("@/assets/images/structure/home.png"),
+      src: require("@/assets/images/shoppingify/product_management.png"),
     },
     {
-      src: require("@/assets/images/structure/login.png"),
+      src: require("@/assets/images/shoppingify/wysiwyg_product_descriptions.png"),
     },
     {
       src: require("@/assets/images/structure/section.png"),
@@ -29,15 +29,14 @@ export default {
       src: require("@/assets/images/structure/offline.png"),
     },
   ],
-  video: "https://www.youtube.com/embed/videoseries?list=PLDFGldFvahMtwgBPyknkKHGuu0pB1VMD4&amp;index=0",
   actions: [
     {
       text: "Visit Website",
-      href: "https://structure.effectivewebapp.com/"
+      href: "https://shop.effectivewebapp.com/"
     },
     {
       text: "View on Github",
-      href: "https://github.com/allania7med11/structure_back/"
+      href: "https://github.com/allania7med11/shop_back/"
     }
   ]
 };
