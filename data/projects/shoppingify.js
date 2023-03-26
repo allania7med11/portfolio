@@ -20,13 +20,16 @@ export default {
       src: require("@/assets/images/shoppingify/wysiwyg_product_descriptions.png"),
     },
     {
-      src: require("@/assets/images/structure/section.png"),
+      src: require("@/assets/images/shoppingify/category_navigation.png"),
     },
     {
-      src: require("@/assets/images/structure/detail.png"),
+      src: require("@/assets/images/shoppingify/product_filtering.png"),
     },
     {
-      src: require("@/assets/images/structure/offline.png"),
+      src: require("@/assets/images/shoppingify/product_ordering.png"),
+    },
+    {
+      src: require("@/assets/images/shoppingify/detailed _product_information.png"),
     },
   ],
   actions: [
