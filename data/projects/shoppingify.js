@@ -1,7 +1,7 @@
 export default {
   name: "Shoppingify Webite",
   technology: "Django/React",
-  image: "structure/entry.png",
+  image: "shoppingify/entry.png",
   technologies: ["Figma", "Digital Ocean", "Docker", "DRF", "Nextjs", "Redux", "MUI", "Typescript"],
   overview: `Shoppingify is an eCommerce website that offers a delightful experience for both shop owners and customers, thanks to its numerous features such as`,
   features: [
