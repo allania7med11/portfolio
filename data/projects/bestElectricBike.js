@@ -12,6 +12,9 @@ export default {
   ],
   images: [
     {
+      src: require("@/assets/images/bestElectricBike/home.png")
+    },
+    {
       src: require("@/assets/images/bestElectricBike/features.png")
     },
     {
