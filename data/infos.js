@@ -1,9 +1,10 @@
 export default {
   name: "Allani Ahmed",
-  about: `I am a self taught developer for 2 years where I combined my civil engineer background ,coding skills to create an online structure analysis software for engineers intuitive and easy to use.
-    I get nano degree front end in udacity after finishing 5 projects that I am proud of
-    I am currently a Hacker in Residence in RBK(Hack Reactor) where I become not only a technical mentor but also a life mentor encouraging students to challenge themselves and helping them become autonomous developers able to face any future challenges.
-    website: https://about.effectivewebapp.com/ `,
+  about: `As a self-taught developer with a background in civil engineering, I have spent the last 2 years honing my coding skills and creating an intuitive online structure analysis software for engineers. In addition to my self-study, I earned a Front End Nano Degree from Udacity, which required me to complete five projects that I am extremely proud of.
+  My passion for teaching led me to work as a Hacker in Residence at RBK, where I not only mastered the Hack Reactor program but also challenged and supported my students in developing a growth mindset and becoming autonomous learners capable of tackling any future challenges.
+  Eager to apply my knowledge and experience to a real-world international project, I transitioned to a full-stack developer role at Softcatalyst. Working in a collaborative environment, I was able to not only leverage my existing skills but also acquire new ones by working with a team to overcome real-life problems.
+  Overall, I am a driven and dedicated developer who is committed to continuous learning and personal growth.
+  website: https://about.effectivewebapp.com/ `,
   image: require("@/assets/images/profile.png"),
   profession: "full-stack developper",
   personal: {
