@@ -19,7 +19,7 @@
           <portfolio />
         </v-lazy>
       </div>
-      <div id="contact" style="padding-top: 60px;" class="grey darken-4" min-height="100vh">
+      <div id="contact" style="padding-top: 60px;" class="grey darken-4 min-full-height" min-height="100vh">
         <v-lazy v-model="Active['contact']" :options="{threshold: .5}" min-height="200px">
           <contact />
         </v-lazy>
@@ -110,5 +110,8 @@ export default {
 }
 .full-height {
   height: 100vh;
+}
+.min-full-height {
+  min-height: 100vh;
 }
 </style>
