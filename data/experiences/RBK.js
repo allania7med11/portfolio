@@ -4,7 +4,7 @@ export default {
   company: "ReBootKamp (RBK) Tunisia",
   dates: {
     start: "Jun 2020",
-    end: "present"
+    end: "Aug 2021"
   },
   description: `RBK is an Immersive Full Stack JavaScript Program based on Hack Reactor curriculum with 1700 hours of training hours.
   I Work with other instructional team members to build & deliver materials and lectures addressing popular technologies and cohort-specific needs along with providing technical and project management guidance to small groups of students building exciting projects using cutting-edge technologies while promoting guided discovery, eXtreme Learning and a Socratic dialog approach to learning.
