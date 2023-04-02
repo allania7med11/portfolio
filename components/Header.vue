@@ -23,22 +23,30 @@
             borderless
           >
             <v-btn @click="fpageB('home')" class="ma-0" value="home">
-              <v-list-item >
+              <v-list-item>
                 <v-list-item-action>
-                <div>
-                  <!-- eslint-disable-next-line vue/html-self-closing -->
-                  <img  class="mr-3 responsive" src="~/assets/favicon.png" alt="EffectiveWebApp" />
-                  Home
-                </div>
+                  <div>
+                    <!-- eslint-disable-next-line vue/html-self-closing -->
+                    <img
+                      class="mr-3 responsive"
+                      src="~/assets/favicon.png"
+                      alt="EffectiveWebApp"
+                    />
+                    Home
+                  </div>
                 </v-list-item-action>
               </v-list-item>
             </v-btn>
-            <v-btn v-for="pg in pages"  @click="fpageB(pg.name)"  :value="pg.name" class="ma-0" :key="pg.id">
+            <v-btn
+              v-for="pg in pages"
+              @click="fpageB(pg.name)"
+              :value="pg.name"
+              class="ma-0"
+              :key="pg.id"
+            >
               <v-list-item>
                 <v-list-item-action>
-                <div>
-                 <Fas class="mr-4" :i="pg.icon" />{{ pg.name }}
-                </div>
+                  <div><Fas class="mr-4" :i="pg.icon" />{{ pg.name }}</div>
                 </v-list-item-action>
               </v-list-item>
             </v-btn>
@@ -72,7 +80,11 @@
             <v-btn @click="fpageB('home')" class="ma-0" value="home">
               <v-avatar>
                 <!-- eslint-disable-next-line vue/html-self-closing -->
-                <img class="pa-1" src="~/assets/favicon.png" alt="EffectiveWebApp" />
+                <img
+                  class="pa-1"
+                  src="~/assets/favicon.png"
+                  alt="EffectiveWebApp"
+                />
               </v-avatar>
               <span class="ml-2 font-weight-black font-italic">Home</span>
             </v-btn>
@@ -85,6 +97,9 @@
             <v-btn @click="fpageB('contact')" class="ma-0" value="contact">
               <span>Contact</span>
             </v-btn>
+            <v-btn href="/resume" class="ma-0" value="" target="_blank">
+              <span>Resume</span>
+            </v-btn>
           </v-btn-toggle>
         </v-toolbar-items>
       </v-toolbar>
@@ -93,7 +108,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex"
+import { mapState, mapActions } from "vuex";
 export default {
   data() {
     return {
@@ -102,35 +117,38 @@ export default {
       miniVariant: false,
       componentKey: 0,
       pageN: "home",
-      pages:[
-        {name:"about", icon:"info-circle"},{name:"portfolio", icon:"book"},{name:"contact", icon:"envelope"}
-      ]
+      pages: [
+        { name: "about", icon: "info-circle" },
+        { name: "portfolio", icon: "book" },
+        { name: "contact", icon: "envelope" },
+      ],
     };
   },
-  computed :{
-    ...mapState(["page","isActive"])
+  computed: {
+    ...mapState(["page", "isActive"]),
   },
   methods: {
     ...mapActions(["pageChange"]),
     fpage() {
-      this.pageChange(this.pageN)
+      this.pageChange(this.pageN);
     },
     fpageB(page) {
+      debugger;
       if (page === this.pageN) {
         this.pageChange(this.pageN);
       }
-    }
+    },
   },
   watch: {
     page: {
       handler() {
         if (this.page !== this.pageN) {
           this.pageN = this.page;
-          this.componentKey=+ 1
+          this.componentKey = +1;
         }
-      }
-    }
-  }
+      },
+    },
+  },
 };
 </script>
 <style>

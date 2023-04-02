@@ -22,7 +22,7 @@ export const actions = {
       commit("stateChange", input)
     },
     pageChange({ commit, state }, page) {
-      if (process.client) {
+      if (process.client && page) {
         commit("stateChange", {state:"page",value:page})
         document.getElementById(state.page).scrollIntoView();
       }
