@@ -133,7 +133,6 @@ export default {
       this.pageChange(this.pageN);
     },
     fpageB(page) {
-      debugger;
       if (page === this.pageN) {
         this.pageChange(this.pageN);
       }
