@@ -25,14 +25,13 @@
             <v-btn @click="fpageB('home')" class="ma-0" value="home">
               <v-list-item>
                 <v-list-item-action>
-                  <div>
-                    <!-- eslint-disable-next-line vue/html-self-closing -->
+                  <div class="side-bar-item">
                     <img
                       class="mr-3 responsive"
                       src="~/assets/favicon.png"
                       alt="EffectiveWebApp"
                     />
-                    Home
+                    <div>Home</div>
                   </div>
                 </v-list-item-action>
               </v-list-item>
@@ -46,7 +45,20 @@
             >
               <v-list-item>
                 <v-list-item-action>
-                  <div><Fas class="mr-4" :i="pg.icon" />{{ pg.name }}</div>
+                  <div class="side-bar-item">
+                    <Fas class="mr-4 side-bar-icon" :i="pg.icon" />
+                    <div>{{ pg.name }}</div>
+                  </div>
+                </v-list-item-action>
+              </v-list-item>
+            </v-btn>
+            <v-btn href="/resume" class="ma-0" value="" target="_blank">
+            <v-list-item>
+                <v-list-item-action>
+                  <div class="side-bar-item">
+                    <Fas class="mr-4 side-bar-icon" i="user" />
+                    <div>Resume</div>
+                  </div>
                 </v-list-item-action>
               </v-list-item>
             </v-btn>
@@ -198,5 +210,12 @@ body {
 
 .sticky + .content {
   padding-top: 102px;
+}
+.side-bar-icon {
+  width: 20px;
+}
+.side-bar-item {
+  display: flex;
+  align-items: center;
 }
 </style>
