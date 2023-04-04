@@ -140,8 +140,9 @@ export default {
   flex-shrink: 0;
 }
 .main-section{
-  flex-basis: 300px;
+  flex-basis: 325px;
   flex-grow: 16;
   flex-shrink: 1;
+  word-break: break-word;
 }
 </style>
