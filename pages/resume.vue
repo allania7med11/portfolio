@@ -1,6 +1,6 @@
 <template>
-  <div class="d-flex">
-    <div class="d-flex flex-column flex-grow-2 grey darken-3 py-4">
+  <div class="sections">
+    <div class="side-section grey darken-3 py-4">
       <div class="d-flex flex-column text-center pa-4 text-no-wrap">
         <div class="display-1 font-weight-bold">
           {{ infos.name }}
@@ -34,7 +34,7 @@
         </div>
       </div>
     </div>
-    <div class="d-flex flex-column flex-grow-10 ma-4">
+    <div class="main-section ma-4">
       <div class="my-2">
         {{ infos.about }}
       </div>
@@ -129,5 +129,19 @@ export default {
   /* Adjust with JavaScript */
   height: 5px;
   border-radius: 2px;
+}
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+}
+.side-section{
+  flex-basis: 200px;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+.main-section{
+  flex-basis: 300px;
+  flex-grow: 16;
+  flex-shrink: 1;
 }
 </style>
