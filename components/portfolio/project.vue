@@ -25,9 +25,13 @@
         <v-card-text class="pl-6">
           {{ project.overview }}
           <ul class="features">
-            <li v-for="(feature, index) in project.features" :key="index">
-              <font-awesome-icon class="primary--text" icon="star" />
-              {{ feature }}
+            <li v-for="(feature, index) in project.features" :key="index" class="feature">
+              <div class="feature-icon">
+                <font-awesome-icon class="primary--text " icon="star" />
+              </div>
+              <div class="feature-text">
+                {{ feature }}
+              </div>
             </li>
           </ul>
         </v-card-text>
@@ -124,6 +128,20 @@ export default {
 <style lang="scss">
 ul.features {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap:4px;
+  padding-left: 18px;
+  padding-top: 8px;
+}
+.feature{
+  display: flex;
+  align-items: start;
+  gap: 8px;
+}
+.feature-icon {
+  min-width: 16px;
+  margin-top: 2px;
 }
 .sectionName {
   text-align: center;
