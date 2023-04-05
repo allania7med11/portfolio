@@ -7,6 +7,6 @@ export default {
       start: "Aug 2020",
       end: "Dec 2020"
     },
-    description: `Since I was one of the students who achieved a top score in the Final Assessment in Front End Developer track I was able to get Udacity Nanodegree Scholarship .With high quality resources and intresting challenges I was able to get unique skills by building responsive websites using CSS, Flexbox and CSS Grid, develop interactive websites and UI (User Interface) applications using JavaScript and HTML, and connect a web application to backend server data using JavaScript.I was also able to build competency automating application build and deployment using Webpack and improving offline performance of websites using Service Worker.`
+    description: `As one of the top-performing students in the Front End Developer track, I earned a scholarship for the Udacity Nanodegree program. Through the program's high-quality resources and challenging projects, I acquired unique skills in building responsive websites with CSS, Flexbox, and CSS Grid, developing interactive websites and UI applications with JavaScript and HTML, and connecting web applications to backend server data with JavaScript. I also gained competence in automating application build and deployment using Webpack and improving website offline performance with Service Worker.`
   };
   
