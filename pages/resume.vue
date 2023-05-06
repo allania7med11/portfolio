@@ -36,7 +36,7 @@
     </div>
     <div class="main-section ma-4">
       <div class="my-2">
-        {{ infos.about }}
+        {{ _t(infos.about) }}
       </div>
       <div class="d-flex flex-column">
         <v-divider></v-divider>
@@ -108,11 +108,24 @@ export default {
     infos,
     skills,
     experiences,
-    educations
+    educations,
+    lang: "en"
   }),
   created() {
     this.$vuetify.theme.dark = true;
+    this.lang = this.$route.query.lang || 'en'
   },
+  methods: {
+    _t(obj) {
+      if(this.lang in obj){
+        return obj[this.lang]
+      }
+      if("en" in obj){
+        return obj["en"]
+      }
+      return obj
+    }
+  }
 };
 </script>
 
