@@ -36,7 +36,7 @@
     </div>
     <div class="main-section ma-4">
       <div class="my-2">
-        {{ _t(infos.about) }}
+        {{ _tr(infos.about) }}
       </div>
       <div class="d-flex flex-column">
         <v-divider></v-divider>
@@ -52,13 +52,13 @@
           </div>
           <div class="d-flex flex-column flex-grow-10">
             <div class="title pt-1">
-              {{ _t(experience.title) }} {{ _t(at) }} {{ experience.company }}
+              {{ _tr(experience.title) }} {{ _tr(at) }} {{ experience.company }}
             </div>
             <div class="subtitle-2">
-              {{ _t(experience.dates.start) }}-{{ _t(experience.dates.end) }}
+              {{ _tr(experience.dates.start) }}-{{ _tr(experience.dates.end) }}
             </div>
             <div class="py-2">
-              {{ _t(experience.description) }}
+              {{ _tr(experience.description) }}
             </div>
           </div>
         </div>
@@ -80,13 +80,13 @@
               {{ education.school }}
             </div>
             <div class="subtitle-2">
-              {{ education.degree }}{{ education.field }}
+              {{ education.degree }}{{ _tr(education.field) }}
             </div>
             <div class="subtitle-2">
               {{ education.dates.start }}-{{ education.dates.end }}
             </div>
             <div class="py-2">
-              {{ education.description }}
+              {{ _tr(education.description) }}
             </div>
           </div>
         </div>
@@ -120,7 +120,7 @@ export default {
     this.lang = this.$route.query.lang || 'en'
   },
   methods: {
-    _t(obj) {
+    _tr(obj) {
       if(typeof obj === 'string'){
         return obj
       }
