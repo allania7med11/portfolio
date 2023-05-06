@@ -52,13 +52,13 @@
           </div>
           <div class="d-flex flex-column flex-grow-10">
             <div class="title pt-1">
-              {{ experience.title }} at {{ experience.company }}
+              {{ _t(experience.title) }} {{ _t(at) }} {{ experience.company }}
             </div>
             <div class="subtitle-2">
-              {{ experience.dates.start }}-{{ experience.dates.end }}
+              {{ _t(experience.dates.start) }}-{{ _t(experience.dates.end) }}
             </div>
             <div class="py-2">
-              {{ experience.description }}
+              {{ _t(experience.description) }}
             </div>
           </div>
         </div>
@@ -109,7 +109,11 @@ export default {
     skills,
     experiences,
     educations,
-    lang: "en"
+    lang: "en",
+    at: {
+      en: "at",
+      fr: "chez"
+    }
   }),
   created() {
     this.$vuetify.theme.dark = true;
@@ -117,6 +121,9 @@ export default {
   },
   methods: {
     _t(obj) {
+      if(typeof obj === 'string'){
+        return obj
+      }
       if(this.lang in obj){
         return obj[this.lang]
       }
