@@ -14,9 +14,9 @@ export default {
     Site web: https://about.effectivewebapp.com/`
   },
   image: require("@/assets/images/profile.png"),
-  profession: "full-stack developper",
+  profession: { en: "full-stack developer", fr: "développeur full-stack" },
   personal: {
-    Address: "SAHBI 1 KAIROUAN Tunis",
+    Address: "Rue Ras Jdir, La Soukra, Tunisia",
     Phone: "+21629667239",
     "E-mail": "allania7med11@gmail.com",
   },
