@@ -5,13 +5,13 @@
         <div class="display-1 font-weight-bold">
           {{ infos.name }}
         </div>
-        <div class="title">{{ infos.profession }}</div>
+        <div class="title">{{ _tr(infos.profession) }}</div>
         <div class="py-2">
           <img height="200px" :src="infos.image" />
         </div>
       </div>
       <div class="d-flex flex-column">
-        <div class="black px-2 py-4 title">Personal Info</div>
+        <div class="black px-2 py-4 title">{{ _tr(msgs.personel_info) }}</div>
         <div
           class="px-2 py-2"
           v-for="(value, key) in infos.personal"
@@ -22,9 +22,12 @@
         </div>
       </div>
       <div class="d-flex flex-column">
-        <div class="black px-2 py-4 title">Skills</div>
+        <div class="black px-2 py-4 title">{{ _tr(msgs.skills) }}</div>
         <div class="px-2 py-1" v-for="(skill, key) in skills" v-bind:key="key">
-          <div class="subheading font-weight-bold d-flex" style="justify-content:space-between">
+          <div
+            class="subheading font-weight-bold d-flex"
+            style="justify-content: space-between"
+          >
             <div>{{ skill.name }}</div>
             <div>{{ skill.value }}</div>
           </div>
@@ -36,7 +39,7 @@
     </div>
     <div class="main-section ma-4">
       <div class="my-2">
-        {{ infos.about }}
+        {{ _tr(infos.about) }}
       </div>
       <div class="d-flex flex-column">
         <v-divider></v-divider>
@@ -52,13 +55,14 @@
           </div>
           <div class="d-flex flex-column flex-grow-10">
             <div class="title pt-1">
-              {{ experience.title }} at {{ experience.company }}
+              {{ _tr(experience.title) }} {{ _tr(msgs.at) }}
+              {{ experience.company }}
             </div>
             <div class="subtitle-2">
-              {{ experience.dates.start }}-{{ experience.dates.end }}
+              {{ _tr(experience.dates.start) }}-{{ _tr(experience.dates.end) }}
             </div>
             <div class="py-2">
-              {{ experience.description }}
+              {{ _tr(experience.description) }}
             </div>
           </div>
         </div>
@@ -80,13 +84,13 @@
               {{ education.school }}
             </div>
             <div class="subtitle-2">
-              {{ education.degree }}{{ education.field }}
+              {{ education.degree }}{{ _tr(education.field) }}
             </div>
             <div class="subtitle-2">
               {{ education.dates.start }}-{{ education.dates.end }}
             </div>
             <div class="py-2">
-              {{ education.description }}
+              {{ _tr(education.description) }}
             </div>
           </div>
         </div>
@@ -108,10 +112,41 @@ export default {
     infos,
     skills,
     experiences,
-    educations
+    educations,
+    lang: "en",
+    msgs: {
+      at: {
+        en: "at",
+        fr: "chez",
+      },
+      personel_info : {
+        en: "Personal Info",
+        fr: "Informations Personnelles"
+      },
+      skills : {
+        en: "Skills",
+        fr: "Compétences"
+      },
+
+    },
   }),
   created() {
     this.$vuetify.theme.dark = true;
+    this.lang = this.$route.query.lang || "en";
+  },
+  methods: {
+    _tr(obj) {
+      if (typeof obj === "string") {
+        return obj;
+      }
+      if (this.lang in obj) {
+        return obj[this.lang];
+      }
+      if ("en" in obj) {
+        return obj["en"];
+      }
+      return obj;
+    },
   },
 };
 </script>
@@ -134,12 +169,12 @@ export default {
   display: flex;
   flex-wrap: wrap;
 }
-.side-section{
+.side-section {
   flex-basis: 200px;
   flex-grow: 1;
   flex-shrink: 0;
 }
-.main-section{
+.main-section {
   flex-basis: 325px;
   flex-grow: 16;
   flex-shrink: 1;
