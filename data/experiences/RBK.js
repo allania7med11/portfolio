@@ -1,13 +1,14 @@
 export default {
   title: { en: "Hacker in Residence", fr: "Hacker en résidence" },
   image: require("@/assets/images/RBK.png"),
-  company: "ReBootKamp (RBK) Tunisia",
+  company: "RBK Tunisia",
   dates: {
     start: "Jun 2020",
     end: "Aug 2021"
   },
   description: {
-    en: `At RBK, I helped build and deliver Immersive Full Stack JavaScript Program curriculum based on the Hack Reactor model, providing technical and project management guidance to students building projects using cutting-edge technologies. As an instructional team member, I fostered guided discovery, eXtreme Learning, and a Socratic dialog approach to learning. I mentored students to challenge themselves and become autonomous developers capable of facing future challenges.`,
-    fr: `À RBK, j'ai aidé à construire et à livrer le programme de curriculum Immersive Full Stack JavaScript basé sur le modèle Hack Reactor, en fournissant des conseils techniques et de gestion de projet aux étudiants construisant des projets en utilisant des technologies de pointe. En tant que membre de l'équipe pédagogique, j'ai favorisé la découverte guidée, l'apprentissage extrême et une approche de dialogue socratique pour l'apprentissage. J'ai encadré les étudiants pour qu'ils se mettent au défi et deviennent des développeurs autonomes capables de faire face aux défis futurs.`
+    en: `At RBK, I assisted in developing and delivering the Immersive Full Stack JavaScript Program curriculum based on the Hack Reactor model. I provided technical and project management guidance to students using cutting-edge technologies, fostering a guided discovery approach to learning. As an instructional team member, I encouraged eXtreme Learning and a Socratic dialog approach. Through mentoring, I helped students challenge themselves and become autonomous developers capable of facing future challenges.`,
+    fr: `Chez RBK, j'ai contribué à la création et à la livraison du programme Immersive Full Stack JavaScript, basé sur le modèle de Hack Reactor. J'ai offert des conseils techniques et en gestion de projets aux étudiants qui utilisaient des technologies de pointe, en encourageant une approche de découverte guidée de l'apprentissage. En tant que membre de l'équipe pédagogique, j'ai favorisé l'eXtreme Learning et une approche de dialogue socratique. Grâce à mon mentorat, j'ai aidé les étudiants à se dépasser et à devenir des développeurs autonomes capables de relever les défis de l'avenir
+    `
   }
 };
