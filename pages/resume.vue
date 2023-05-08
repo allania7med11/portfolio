@@ -61,7 +61,7 @@
             <div class="subtitle-2">
               {{ _tr(experience.dates.start) }}-{{ _tr(experience.dates.end) }}
             </div>
-            <div class="py-2">
+            <div class="py-2 description">
               {{ _tr(experience.description) }}
             </div>
           </div>
@@ -89,7 +89,7 @@
             <div class="subtitle-2">
               {{ education.dates.start }}-{{ education.dates.end }}
             </div>
-            <div class="py-2">
+            <div class="py-2 description">
               {{ _tr(education.description) }}
             </div>
           </div>
@@ -173,6 +173,12 @@ export default {
 </script>
 
 <style>
+.subtitle-2 {
+  font-size: 13px;
+}
+.description {
+  font-size: 15px;
+}
 .progressbar {
   background-color: black;
   border-radius: 13px;
