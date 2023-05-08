@@ -3,8 +3,14 @@ export default {
   image: require("@/assets/images/RBK.png"),
   company: "RBK Tunisia",
   dates: {
-    start: "Jun 2020",
-    end: "Aug 2021"
+    start: {
+      en: "Jun 2020",
+      fr: `Juin 2020`
+    },
+    end: {
+      en: "Aug 2021",
+      fr: `Août 2021`
+    }
   },
   description: {
     en: `At RBK, I assisted in developing and delivering the Immersive Full Stack JavaScript Program curriculum based on the Hack Reactor model. I provided technical and project management guidance to students using cutting-edge technologies, fostering a guided discovery approach to learning. As an instructional team member, I encouraged eXtreme Learning and a Socratic dialog approach. Through mentoring, I helped students challenge themselves and become autonomous developers capable of facing future challenges.`,

@@ -87,7 +87,7 @@
               {{ education.degree }}{{ _tr(education.field) }}
             </div>
             <div class="subtitle-2">
-              {{ education.dates.start }}-{{ education.dates.end }}
+              {{ _tr(education.dates.start) }}-{{ _tr(education.dates.end) }}
             </div>
             <div class="py-2 description">
               {{ _tr(education.description) }}

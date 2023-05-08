@@ -4,8 +4,8 @@ export default {
     degree: "Nanodegree, ",
     field: "Développement Web Front-End",
     dates: {
-      start: "Aug 2020",
-      end: "Dec 2020"
+      start: "Août 2020",
+      end: "Déc 2020"
     },
     description:{
       en: "As one of the top-performing students in the Front End Developer track, I earned a scholarship for the Udacity Nanodegree program. Through the program, which provided high-quality resources and challenging projects, I acquired unique skills in building responsive websites with CSS, developing interactive websites and UI applications with JavaScript and HTML, and connecting web applications to backend server data with JavaScript. I also learned how to automate application build and deployment using Webpack and improve website offline performance with Service Worker.",

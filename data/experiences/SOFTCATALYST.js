@@ -6,7 +6,10 @@ export default {
   image: require("@/assets/images/SOFTCATALYST.png"),
   company: "SOFTCATALYST",
   dates: {
-    start: "Aug 2021",
+    start: {
+      en: "Aug 2021",
+      fr: `Août 2021`
+    },
     end: {
       en: "Present",
       fr: `Présent`
