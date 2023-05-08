@@ -16,7 +16,7 @@ export default {
   image: require("@/assets/images/profile.png"),
   profession: { en: "full-stack developer", fr: "développeur full-stack" },
   personal: {
-    Address: "Rue Ras Jdir, La Soukra, Tunisia",
+    Address: { en: "Rue Ras Jdir, La Soukra, Tunisia", fr: "Rue Ras Jdir, La Soukra, Tunisie" },
     Phone: "+21629667239",
     "E-mail": "allania7med11@gmail.com",
   },

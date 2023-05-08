@@ -17,8 +17,8 @@
           v-for="(value, key) in infos.personal"
           v-bind:key="key"
         >
-          <div class="subheading font-weight-bold">{{ key }}:</div>
-          <div class="body-2 font-weight-light">{{ value }}</div>
+          <div class="subheading font-weight-bold">{{ _tr_key(key) }}:</div>
+          <div class="body-2 font-weight-light">{{ _tr(value) }}</div>
         </div>
       </div>
       <div class="d-flex flex-column">
@@ -43,7 +43,7 @@
       </div>
       <div class="d-flex flex-column">
         <v-divider></v-divider>
-        <div class="py-3 title">Experience</div>
+        <div class="py-3 title">{{ _tr(msgs.experience) }}</div>
         <v-divider></v-divider>
         <div
           v-for="experience in experiences"
@@ -119,15 +119,26 @@ export default {
         en: "at",
         fr: "chez",
       },
-      personel_info : {
+      personel_info: {
         en: "Personal Info",
-        fr: "Informations Personnelles"
+        fr: "Informations Personnelles",
       },
-      skills : {
+      skills: {
         en: "Skills",
-        fr: "Compétences"
+        fr: "Compétences",
       },
-
+      Address: {
+        en: "Address",
+        fr: "Adresse",
+      },
+      Phone: {
+        en: "Phone",
+        fr: "Téléphone",
+      },
+      experience: {
+        en: "Experience",
+        fr: "Expérience",
+      },
     },
   }),
   created() {
@@ -136,6 +147,9 @@ export default {
   },
   methods: {
     _tr(obj) {
+      if (!obj) {
+        return "";
+      }
       if (typeof obj === "string") {
         return obj;
       }
@@ -146,6 +160,13 @@ export default {
         return obj["en"];
       }
       return obj;
+    },
+    _tr_key(key) {
+      debugger;
+      if (key in this.msgs) {
+        return this._tr(this.msgs[key]);
+      }
+      return key;
     },
   },
 };
