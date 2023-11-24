@@ -10,7 +10,8 @@ export default {
     "Category Navigation: Customers can navigate between different categories of products, making it easier to find what they're looking for.",
     "Product Filtering: Customers can filter products by price, discount, or search text in the product name or description, allowing them to narrow down their options and find the best product for them.",
     "Product Ordering: Customers can order products by name or price, making it easier to compare and select the products they want to purchase.",
-    "Detailed Product Information: Customers can review detailed product descriptions and multiple images before making a purchase, ensuring they have all the information they need to make an informed decision."
+    "Detailed Product Information: Customers can review detailed product descriptions and multiple images before making a purchase, ensuring they have all the information they need to make an informed decision.",
+    "Shopping Cart: Customers can add products to their shopping cart, adjust quantities, and review their selections, with the number of items and total price displayed on a dedicated page, effortlessly without the need to log in."
   ],
   images: [
     {
@@ -30,6 +31,12 @@ export default {
     },
     {
       src: require("@/assets/images/shoppingify/detailed _product_information.png"),
+    },
+    {
+      src: require("@/assets/images/shoppingify/cart_adding.png"),
+    },
+    {
+      src: require("@/assets/images/shoppingify/cart_display.png"),
     },
   ],
   actions: [
