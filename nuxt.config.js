@@ -8,6 +8,10 @@ export default {
    generate: {
     dir: "portfolio"
   },
+  server: {
+    port: process.env.PORT || 3000,
+    host: "localhost" // default: localhost
+  },
   head: {
     titleTemplate: "%s - " + process.env.npm_package_name,
     title: process.env.npm_package_name || "",
@@ -70,7 +74,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: urls.baseURL,
+    baseURL: urls.backendUrl,
     https: Production
   },
   /*

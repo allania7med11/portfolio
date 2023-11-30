@@ -1,9 +1,13 @@
 #!/bin/sh
-echo "envs $1 $2"
-if [ "$1" = "dev" ]; then
+echo "envs $ENVIRONMENT $PORT"
+if [ "$COLLECTSTATIC" = "True" ]; then
+    npm run generate
+fi
+if [ "$ENVIRONMENT" = "debug" ]; then
+    sleep infinity
+elif [ "$ENVIRONMENT" = "dev" ]; then
     npm run dev
-else
+elif [ "$ENVIRONMENT" = "prod" ]; then
     npm run build
-    npm run export
-    npx serve out -p $2
+    npm run start
 fi
