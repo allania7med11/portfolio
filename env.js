@@ -1,12 +1,7 @@
-const Production = true
-const host = Production ? "0.0.0.0" : "localhost"
-const urls = Production
-  ? {
-      baseURL: "https://about.effectivewebapp.com/"
-    }
-  : {
-      baseURL: "http://about.localhost/"
-    }
+const Production = process.env.ENVIRONMENT != "dev"
+const urls = {
+  backendUrl: process.env.BACKEND_URL || ""
+}
 const Test = true
 const TestInfo = { user: "user1" }
-export { Production, host, urls, Test, TestInfo }
+export { Production, urls, Test, TestInfo }
