@@ -5,9 +5,9 @@
   "author": "allania7med11",
   "private": true,
   "scripts": {
-    "dev": "nuxt  --port 4010",
+    "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start --port 4000",
+    "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {

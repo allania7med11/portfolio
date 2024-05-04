@@ -1,13 +1,15 @@
 #!/bin/sh
-echo "envs $ENVIRONMENT $PORT"
+echo "ENVIRONMENT=$ENVIRONMENT"
+echo "COLLECTSTATIC=$COLLECTSTATIC"
+echo "PORT=$PORT"
 if [ "$COLLECTSTATIC" = "True" ]; then
     npm run generate && echo "Generation completed successfully"
 fi
 if [ "$ENVIRONMENT" = "debug" ]; then
     sleep infinity
 elif [ "$ENVIRONMENT" = "dev" ]; then
-    npm run dev
+    npm run dev -- --port $PORT
 elif [ "$ENVIRONMENT" = "prod" ]; then
     npm run build
-    npm run start
+    npm run start -p $PORT
 fi
