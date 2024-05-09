@@ -10,8 +10,10 @@ export default {
   },
   server: {
     port: process.env.PORT || 3000,
-    host: "localhost" // default: localhost
+    host: process.env.HOST || "0.0.0.0", // default: 0.0.0.0
   },
+  ssr: false,
+  target: 'static',
   head: {
     titleTemplate: "%s - " + process.env.npm_package_name,
     title: process.env.npm_package_name || "",
