@@ -7,6 +7,6 @@ export default [
   { name: "Vue/Vuetify/Nuxt", value: "85%" },
   { name: "SQL/Postgresql", value: "80%" },
   { name: "NoSQL/Mongodb", value: "80%" },
-  { name: "Linux/Docker", value: "70%" },
+  { name: "Linux/Ansible/Docker", value: "85%" },
   { name: "Figma/UI", value: "75%" },
 ];

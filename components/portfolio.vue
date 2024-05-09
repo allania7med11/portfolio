@@ -7,11 +7,12 @@
         </div>
       </v-col>
     </v-row>
-    <v-row justify="space-around">
+    <v-row justify="space-around" class="projects_container">
       <v-col
         v-for="(project, index) in projects"
         :key="index"
         data-aos="fade-up"
+        class="project_container"
         md="4"
         sm="6"
         xs="12"
@@ -96,6 +97,9 @@ export default {
 };
 </script>
 <style scoped>
+.project_container{
+  max-height: 40vh;
+}
 .close {
   position: absolute;
   right: 0;
