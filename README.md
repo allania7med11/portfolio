@@ -2,11 +2,11 @@
 
 > This website application will enable the developer to showcase their skills in an easy and efficient way through its numerous features, such as:
 
-*Display an overview of different building projects with the ability to add feature descriptions, screenshots, videos, and useful links for planning, design, GitHub code, and deployed websites.
+- **Display an overview of different building projects with the ability to add feature descriptions, screenshots, videos, and useful links for planning, design, GitHub code, and deployed websites.
 
-*Display various competencies earned through professional experience or by building personal projects to continuously enhance the developer's expertise.
+- **Display various competencies earned through professional experience or by building personal projects to continuously enhance the developer's expertise.
 
-*Generate a resume showcasing their skills, work history, and education, with the ability to display it online or download it as a PDF
+- **Generate a resume showcasing their skills, work history, and education, with the ability to display it online or download it as a PDF
 
 ## Project Links
 - **Deployment Repository**: [https://github.com/allania7med11/deploy/](https://github.com/allania7med11/deploy/)
