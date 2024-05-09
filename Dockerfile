@@ -1,8 +1,10 @@
-FROM node:16-alpine
-RUN apk update && apk upgrade && \
-    apk add --no-cache bash git openssh
-RUN apk update && \ 
-    apk add --virtual build-dependencies build-base gcc wget
+FROM node:16
+RUN apt-get update && \
+    apt-get install -y \
+    bash \
+    git \
+    openssh-client \
+    curl 
 
 WORKDIR /app
 
@@ -13,4 +15,3 @@ RUN yarn install
 COPY . .
 
 ENTRYPOINT ["sh", "./run.sh"]
-CMD ["dev", "3000"]
