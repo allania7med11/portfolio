@@ -14,7 +14,9 @@ export default {
     "Shopping Cart: Customers can add products to their shopping cart, adjust quantities, and review their selections, with the number of items and total price displayed on a dedicated page, effortlessly without the need to log in.",
     "Customer Authentication: Customers will only be required to log in to validate their order, enabling them to track its status easily later. The interface includes a simple option to recover their account if they forget their password.",
     "Order Validation: Customers are prompted to enter their shipping details to ensures accurate order fulfillment and delivery",
-    "Order complete: An animated congratulatory message will be displayed to the user to inform them that their order was placed successfully."
+    "Order Complete: An animated congratulatory message will be displayed to the customers to inform them that their order was placed successfully.",
+    "Order Processing: Shop owners have the option to process completed orders, modify some details if needed, before moving the order to the shipped state.",
+    "Order Management: Shop owners are able to easily manage the state of different orders, including Processing, Shipped, Delivered, and Canceled."
   ],
   images: [
     {
@@ -49,6 +51,12 @@ export default {
     },
     {
       src: require("@/assets/images/shoppingify/order_complete.gif"),
+    },
+    {
+      src: require("@/assets/images/shoppingify/order_processing.png"),
+    },
+    {
+      src: require("@/assets/images/shoppingify/order_management.png"),
     },
   ],
   actions: [
