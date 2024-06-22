@@ -11,7 +11,8 @@ export default {
     "Product Filtering: Customers can filter products by price, discount, or search text in the product name or description, allowing them to narrow down their options and find the best product for them.",
     "Product Ordering: Customers can order products by name or price, making it easier to compare and select the products they want to purchase.",
     "Detailed Product Information: Customers can review detailed product descriptions and multiple images before making a purchase, ensuring they have all the information they need to make an informed decision.",
-    "Shopping Cart: Customers can add products to their shopping cart, adjust quantities, and review their selections, with the number of items and total price displayed on a dedicated page, effortlessly without the need to log in."
+    "Shopping Cart: Customers can add products to their shopping cart, adjust quantities, and review their selections, with the number of items and total price displayed on a dedicated page, effortlessly without the need to log in.",
+    "Customer Authentication: Customers will only be required to log in to validate their order, enabling them to track its status easily later. The interface includes a simple option to recover their account if they forget their password."
   ],
   images: [
     {
@@ -37,6 +38,9 @@ export default {
     },
     {
       src: require("@/assets/images/shoppingify/cart_display.png"),
+    },
+    {
+      src: require("@/assets/images/shoppingify/authentication.png"),
     },
   ],
   actions: [
