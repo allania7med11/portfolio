@@ -11,3 +11,4 @@ services:
       - /app/node_modules # Exclude node_modules from the volume mapping
     ports:
       - "3000:3000"
+    user: node
