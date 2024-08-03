@@ -12,6 +12,8 @@ COPY package.json yarn.lock ./
 
 RUN yarn install
 
+RUN mkdir node_modules/.cache && chmod -R 777 node_modules/.cache
+
 COPY . .
 
 ENTRYPOINT ["sh", "./run.sh"]
