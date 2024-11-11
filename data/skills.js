@@ -3,6 +3,7 @@ export default [
   { name: "Javascript/Typescript", value: "85%" },
   { name: "Python/Django/DRF", value: "90%" },
   { name: "React/MATERIAL-UI/Next", value: "90%" },
+  { name: "Pytest/Playwright", value: "80%" },
   { name: "Node/Express", value: "80%" },
   { name: "Vue/Vuetify/Nuxt", value: "85%" },
   { name: "SQL/Postgresql", value: "80%" },
