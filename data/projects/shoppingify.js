@@ -71,7 +71,7 @@ export default {
     },
     {
       text: "View on Github",
-      href: "https://github.com/allania7med11/shop_back/"
+      href: "https://github.com/allania7med11/shop/"
     }
   ]
 };
