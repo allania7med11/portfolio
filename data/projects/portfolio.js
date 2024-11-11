@@ -28,6 +28,9 @@ export default {
             src: require("@/assets/images/portfolio/project.png"),
         },
         {
+            src: require("@/assets/images/portfolio/preview.png"),
+        },
+        {
             src: require("@/assets/images/portfolio/skills.png"),
         },
         {
