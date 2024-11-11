@@ -25,9 +25,13 @@
         <v-card-text class="pl-6">
           {{ project.overview }}
           <ul class="features">
-            <li v-for="(feature, index) in project.features" :key="index" class="feature">
+            <li
+              v-for="(feature, index) in project.features"
+              :key="index"
+              class="feature"
+            >
               <div class="feature-icon">
-                <font-awesome-icon class="primary--text " icon="star" />
+                <font-awesome-icon class="primary--text" icon="star" />
               </div>
               <div class="feature-text">
                 {{ feature }}
@@ -44,12 +48,22 @@
             <v-row align="center" justify="center">
               <v-col cols="11">
                 <v-img
-                  class="ml-2"
+                  class="ml-2 zoom-cursor"
                   width="95%"
                   contain
                   :style="imageHeight"
                   :src="project.images[page - 1].src"
+                  @click="overlayImage = true"
                 />
+
+                <v-overlay
+                  v-if="overlayImage"
+                  :value="overlayImage"
+                  class="d-flex justify-center align-center zoom-out-cursor"
+                  @click="overlayImage = false"
+                >
+                  <v-img :src="project.images[page - 1].src" max-width="90vw" />
+                </v-overlay>
               </v-col>
             </v-row>
           </v-container>
@@ -68,7 +82,9 @@
           <v-container fluid class="mt-8">
             <v-row align="center" justify="center">
               <v-col cols="11">
-                <div class="video-description">This is a trailer for the software in version 1</div>
+                <div class="video-description">
+                  This is a trailer for the software in version 1
+                </div>
                 <div class="video-container">
                   <iframe
                     :title="project.name"
@@ -85,7 +101,6 @@
         </v-row>
       </template>
     </v-col>
-
     <v-col cols="12">
       <v-row align="center" justify="center">
         <div class="text-center">
@@ -110,6 +125,7 @@ export default {
   data() {
     return {
       page: 1,
+      overlayImage: false,
     };
   },
   computed: {
@@ -130,11 +146,11 @@ ul.features {
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  gap:4px;
+  gap: 4px;
   padding-left: 18px;
   padding-top: 8px;
 }
-.feature{
+.feature {
   display: flex;
   align-items: start;
   gap: 8px;
@@ -157,9 +173,17 @@ ul.features {
   max-width: 600px;
   margin: auto;
 }
-.video-description{
+.video-description {
   text-align: center;
   font-weight: bold;
   margin-bottom: 8px;
+}
+
+.zoom-cursor {
+  cursor: zoom-in;
+}
+
+.zoom-out-cursor {
+  cursor: zoom-out;
 }
 </style>
