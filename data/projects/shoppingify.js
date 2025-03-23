@@ -68,6 +68,9 @@ export default {
     {
       src: require("@/assets/images/shoppingify/admin_chat_panel.png"),
     },
+    {
+      src: require("@/assets/images/shoppingify/real_Time_messaging.gif"),
+    },
   ],
   actions: [
     {
