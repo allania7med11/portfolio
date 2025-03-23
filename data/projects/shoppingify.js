@@ -2,7 +2,7 @@ export default {
   name: "Shoppingify Webite",
   technology: "Django/React",
   image: "shoppingify/entry.png",
-  technologies: ["Figma", "Digital Ocean", "Docker", "DRF", "Nextjs", "Redux", "MUI", "Typescript", "Stripe", "Sentry", "Pytest", "Playwright"],
+  technologies: ["Figma", "Digital Ocean", "Docker", "DRF", "Nextjs", "Redux", "MUI", "Typescript", "Stripe", "Sentry", "Pytest", "Playwright", "Django Channels", "Redis", "WebSockets"],
   overview: `Shoppingify is an eCommerce website that offers a delightful experience for both shop owners and customers, thanks to its numerous features such as`,
   features: [
     "Product Management: Shop owners can easily add products with images, discounts, and categories to keep their store up-to-date and well-organized.",
@@ -17,7 +17,10 @@ export default {
     "Flexible Payment Options: Provide customers with the convenience of choosing between credit card payments or cash upon delivery, enhancing their shopping experience with versatile payment methods.",
     "Order Complete: An animated congratulatory message will be displayed to the customers to inform them that their order was placed successfully.",
     "Order Processing: Shop owners have the option to process completed orders, modify some details if needed, before moving the order to the shipped state.",
-    "Order Management: Shop owners are able to easily manage the state of different orders, including Processing, Shipped, Delivered, and Canceled."
+    "Order Management: Shop owners are able to easily manage the state of different orders, including Processing, Shipped, Delivered, and Canceled.",
+    "Chat Functionality: A site-wide chat button enables instant communication between customers and admins—no login required for users.",
+    "Admin Chat Panel: A dedicated panel lists ongoing chats, sorted by recent activity, with previews, timestamps, and user info.",
+    "Real-Time Messaging: Upgraded the chat system for instant communication between users and admins, replacing polling with live message delivery and dynamic updates."
   ],
   images: [
     {
@@ -58,6 +61,12 @@ export default {
     },
     {
       src: require("@/assets/images/shoppingify/order_management.png"),
+    },
+    {
+      src: require("@/assets/images/shoppingify/chat_functionality.png"),
+    },
+    {
+      src: require("@/assets/images/shoppingify/admin_chat_panel.png"),
     },
   ],
   actions: [
