@@ -1,14 +1,14 @@
 export default {
-    title: "CEO",
-    image: require("@/assets/images/EWA.png"),
-    company: "EffectiveWebApp",
-    dates: {
-      start: "2018",
-      end: "Jun 2020"
-    },
-    description: `I have always been passionate about solving difficult problems and challenging my limits. I didn't want to simply use programs as a black box, I wanted to create them to solve interesting problems. Despite my environment not being supportive, I decided to learn on my own. Through self-discipline and patience, I combined my civil engineering background and coding skills to create a website application for engineers, making structure analysis easy and effective.`,
-    description: {
-      en: `I have always been passionate about solving difficult problems and challenging my limits. I didn't want to simply use programs as a black box, I wanted to create them to solve interesting problems. Despite my environment not being supportive, I decided to learn on my own. Through self-discipline and patience, I combined my civil engineering background and coding skills to create a website application for engineers, making structure analysis easy and effective.`,
-      fr: `J'ai toujours été passionné par la résolution de problèmes complexes et le dépassement de mes limites. Je ne voulais pas simplement utiliser des programmes comme une boîte noire, je voulais les créer pour résoudre des problèmes intéressants. Malgré le manque de soutien de mon environnement, j'ai décidé d'apprendre par moi-même. Grâce à la discipline et à la patience, j'ai combiné mes connaissances en génie civil et mes compétences en programmation pour créer une application web destinée aux ingénieurs, rendant l'analyse de structures facile et efficace.`
-    }
-  };
+  title: "Founder & Full-Stack Developer",
+  image: require("@/assets/images/EWA.png"),
+  company: "EffectiveWebApp",
+  dates: {
+    start: "2018",
+    end: "Jun 2020"
+  },
+  description: {
+    en: `With a background in structural engineering, I built a 2D structural analysis web app to better understand the inner workings of structural analysis software. The platform lets engineers design structures, apply loads, and instantly visualize internal forces, stress, and displacement through a clean, interactive interface. The project pushed me to learn independently, solve real problems, and build with clarity and purpose. It also sparked a mindset of continuous growth—driving me to constantly improve and reach new levels as a developer.`,
+    fr: `Issu d'une formation en ingénierie structurelle, j'ai développé une application web d'analyse structurelle 2D pour mieux comprendre le fonctionnement interne des logiciels d'analyse structurelle. La plateforme permet aux ingénieurs de concevoir des structures, d'appliquer des charges, et de visualiser instantanément les efforts internes, contraintes et déplacements via une interface interactive et épurée. Ce projet m’a poussé à apprendre de manière autonome, à résoudre des problèmes concrets et à construire avec clarté et intention. Il a également déclenché une dynamique d’apprentissage continu qui me pousse à progresser constamment et à atteindre de nouveaux niveaux en tant que développeur.`
+  }
+};
+
