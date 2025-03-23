@@ -2,6 +2,7 @@ export default [
   { name: "Html/Css", value: "90%" },
   { name: "Javascript/Typescript", value: "85%" },
   { name: "Python/Django/DRF", value: "90%" },
+  { name: "Channels/WebSockets", value: "80%" },
   { name: "React/MATERIAL-UI/Next", value: "90%" },
   { name: "Pytest/Playwright", value: "80%" },
   { name: "Node/Express", value: "80%" },
