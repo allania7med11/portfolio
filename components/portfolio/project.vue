@@ -24,37 +24,92 @@
         >
         <v-card-text class="pl-6">
           {{ project.overview }}
-          <ul class="features">
-            <li
-              v-for="(feature, index) in project.features"
-              :key="index"
-              class="feature"
+          <template v-if="project.groups">
+            <div
+              v-for="(group, groupName) in project.groups"
+              :key="groupName"
+              class="feature-group"
             >
-              <div class="feature-icon">
-                <font-awesome-icon class="primary--text" icon="star" />
-              </div>
-              <div class="feature-text">
-                {{ feature }}
-              </div>
-            </li>
-          </ul>
+              <div class="group-title">{{ groupName }}</div>
+              <ul class="features">
+                <li
+                  v-for="(feature, index) in group.features"
+                  :key="index"
+                  class="feature"
+                >
+                  <div class="feature-icon">
+                    <font-awesome-icon class="primary--text" icon="star" />
+                  </div>
+                  <div class="feature-text">
+                    {{ feature }}
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </template>
+          <template v-else>
+            <ul class="features">
+              <li
+                v-for="(feature, index) in project.features"
+                :key="index"
+                class="feature"
+              >
+                <div class="feature-icon">
+                  <font-awesome-icon class="primary--text" icon="star" />
+                </div>
+                <div class="feature-text">
+                  {{ feature }}
+                </div>
+              </li>
+            </ul>
+          </template>
         </v-card-text>
       </v-card>
     </v-col>
     <v-col cols="12">
-      <template v-if="project.images">
+      <template v-if="project.images || project.groups">
         <v-row>
           <v-container fluid>
             <v-row align="center" justify="center">
               <v-col cols="11">
-                <v-img
-                  class="ml-2 zoom-cursor"
-                  width="95%"
-                  contain
-                  :style="imageHeight"
-                  :src="project.images[page - 1].src"
-                  @click="overlayImage = true"
-                />
+                <template v-if="project.groups">
+                  <div
+                    v-for="(group, groupName) in project.groups"
+                    :key="groupName"
+                    class="image-group"
+                  >
+                    <div class="group-title">{{ groupName }}</div>
+                    <v-img
+                      class="ml-2 zoom-cursor mb-4"
+                      width="95%"
+                      contain
+                      :style="imageHeight"
+                      :src="group.images[groupPages[groupName] - 1].src"
+                      @click="
+                        openOverlay(group.images[groupPages[groupName] - 1].src)
+                      "
+                    />
+                    <v-row align="center" justify="center" class="mt-4">
+                      <div class="text-center">
+                        <v-pagination
+                          v-model="groupPages[groupName]"
+                          :length="group.images.length"
+                          @input="updateGroupImage(groupName)"
+                        ></v-pagination>
+                      </div>
+                    </v-row>
+                  </div>
+                </template>
+                <template v-else>
+                  <v-img
+                    class="ml-2 zoom-cursor"
+                    width="95%"
+                    contain
+                    :style="imageHeight"
+                    :src="project.images[page - 1].src"
+                    @click="overlayImage = true"
+                  />
+                </template>
 
                 <v-overlay
                   v-if="overlayImage"
@@ -62,13 +117,13 @@
                   class="d-flex justify-center align-center zoom-out-cursor"
                   @click="overlayImage = false"
                 >
-                  <v-img :src="project.images[page - 1].src" max-width="90vw" />
+                  <v-img :src="currentImage" max-width="90vw" />
                 </v-overlay>
               </v-col>
             </v-row>
           </v-container>
         </v-row>
-        <v-row align="center" justify="center">
+        <v-row v-if="!project.groups" align="center" justify="center">
           <div class="text-center">
             <v-pagination
               v-model="page"
@@ -126,7 +181,17 @@ export default {
     return {
       page: 1,
       overlayImage: false,
+      currentImage: null,
+      groupPages: {},
     };
+  },
+  created() {
+    // Initialize page numbers for each group
+    if (this.project.groups) {
+      Object.keys(this.project.groups).forEach((groupName) => {
+        this.groupPages[groupName] = 1;
+      });
+    }
   },
   computed: {
     imageHeight() {
@@ -136,6 +201,16 @@ export default {
         return { height: "250px" };
       }
       return { height: "300px" };
+    },
+  },
+  methods: {
+    openOverlay(imageSrc) {
+      this.currentImage = imageSrc;
+      this.overlayImage = true;
+    },
+    updateGroupImage(groupName) {
+      // Force a re-render of the image when pagination changes
+      this.$forceUpdate();
     },
   },
 };
@@ -185,5 +260,18 @@ ul.features {
 
 .zoom-out-cursor {
   cursor: zoom-out;
+}
+
+.feature-group {
+  margin-bottom: 24px;
+}
+.group-title {
+  font-weight: bold;
+  color: var(--v-primary-base);
+  margin-bottom: 12px;
+  font-size: 1.1em;
+}
+.image-group {
+  margin-bottom: 32px;
 }
 </style>
