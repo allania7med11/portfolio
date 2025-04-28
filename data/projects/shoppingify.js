@@ -72,15 +72,16 @@ export default {
         "Admin Chat Panel: Manage customer chats with previews, timestamps, and activity sorting.",
         "Real-Time Messaging: Enable live chat communication using WebSockets for instant updates.",
         "AI Shopping Assistant: Provide smart product recommendations and answers using OpenAI GPT-4 Turbo with real-time vector search (FAISS) and conversation memory.",
-        "Admin Chatbot Control: Admins can enable or disable the AI chatbot as needed to maintain quality service.",
         "AI Product Awareness: AI stays updated with real-time product info and prices via asynchronous index rebuilding (Celery), ensuring accurate responses to customer questions.",
-        "Conversational Memory: AI personalizes the experience by remembering previous conversations for better follow-ups."
+        "Conversational Memory: AI personalizes the experience by remembering previous conversations for better follow-ups.",
+        "Admin Chatbot Control & Review: Admins can monitor conversations in real time, review AI responses, and enable or disable the chatbot for clients to maintain service quality.",
       ],
       images: [
         { src: require("@/assets/images/shoppingify/chat_functionality.png") },
         { src: require("@/assets/images/shoppingify/admin_chat_panel.png") },
         { src: require("@/assets/images/shoppingify/real_time_messaging.gif") },
-        { src: require("@/assets/images/shoppingify/ai_shopping_assistant.gif") }
+        { src: require("@/assets/images/shoppingify/ai_shopping_assistant.gif") },
+        { src: require("@/assets/images/shoppingify/admin_chatbot_control.png") }
       ]
     }
   },
