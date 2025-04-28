@@ -42,7 +42,7 @@
           <v-col>
             <div style="height: 100%" class="grey lighten-3">
               <div
-                style="height: 100%;transition: width 2s;transition-delay: 1s;"
+                style="height: 100%; transition: width 2s; transition-delay: 1s"
                 :style="{ width: isVisible ? value.value : '0%' }"
                 class="blue darken-4"
               >
@@ -81,12 +81,13 @@ export default {
       { name: "Python/Django/DRF", value: "90%" },
       { name: "Channels/WebSockets", value: "80%" },
       { name: "React/MATERIAL-UI/Next", value: "90%" },
+      { name: "AI/OpenAI/LangChain", value: "80%" },
       { name: "Pytest/Playwright", value: "80%" },
       { name: "Node/Express", value: "80%" },
       { name: "Vue/Vuetify/Nuxt", value: "85%" },
-      { name: "SQL/Postgresql", value: "80%" },
-      { name: "NoSQL/Mongodb", value: "80%" },
-      { name: "Linux/Ansible/Docker", value: "85%" },
+      { name: "SQL/PostgreSQL", value: "85%" },
+      { name: "NoSQL/MongoDB", value: "80%" },
+      { name: "Linux/Docker/Ansible", value: "85%" },
       { name: "Figma/UI", value: "75%" },
     ],
   }),
@@ -100,6 +101,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>
