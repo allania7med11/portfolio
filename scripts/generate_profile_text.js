@@ -55,7 +55,7 @@ Full-stack developer with expertise in web development, AI integration, and DevO
 
     // Read experiences index for order
     const experiencesIndexPath = path.join(__dirname, '../data/experiences/index.js');
-    const experiencesOrder = ['UPWORK', 'SOFTCATALYST', 'RBK', 'EWA']; // Hardcoded order as per index.js
+    const experiencesOrder = parseIndexFile(experiencesIndexPath);
 
     // Read education index for order
     const educationIndexPath = path.join(__dirname, '../data/educations/index.js');
@@ -86,15 +86,21 @@ Full-stack developer with expertise in web development, AI integration, and DevO
     };
 
     // Add technologies grouped by category
-    Object.entries(techCategories).forEach(([category, techs]) => {
-        const categoryTechs = Array.from(technologies).filter(tech =>
-            techs.some(t => tech.toLowerCase().includes(t.toLowerCase()))
-        );
-        if (categoryTechs.length > 0) {
+    // Loop over each tech category
+    for (const [category, keywords] of Object.entries(techCategories)) {
+        // Precompute the lowercased keywords once
+        const keywordsLowerCase = keywords.map(keyword => keyword.toLowerCase());
+        const matchedTechs = [...technologies].filter(tech => {
+            const techLower = tech.toLowerCase();
+            return keywordsLowerCase.some(keywordLower => techLower.includes(keywordLower));
+          });
+
+        // If there are matches, add them under the category
+        if (matchedTechs.length > 0) {
             text += `\n### ${category}\n`;
-            text += categoryTechs.map(tech => `- ${tech}`).join('\n');
+            text += matchedTechs.map(tech => `- ${tech}`).join('\n');
         }
-    });
+    }
 
     text += `\n\n## 🎯 Featured Projects
 `;
