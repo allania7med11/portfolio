@@ -1,10 +1,10 @@
 import UPWORK from './UPWORK'
-import SOFTCATALYST from './SOFTCATALYST'
+import Ignis_Health from './Ignis_Health'
 import RBK from './RBK'
 import EWA from './EWA'
 export default {
     UPWORK,
-    SOFTCATALYST,
+    Ignis_Health,
     RBK,
     EWA
 }
