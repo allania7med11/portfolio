@@ -196,10 +196,10 @@ Technologies: Digital Ocean, Django Rest Framework, Nuxt, Vuetify, PWA
 
 Developed Shoppingify – a full-featured eCommerce platform with clear separation between backend and frontend. The backend, built with Django, DRF, Django Channels, Celery, and Redis, handles business logic, real-time messaging with WebSockets, and background tasks. AI integration using OpenAI GPT-4 Turbo, LangChain, and FAISS enables smart shopping assistance with conversational memory. The frontend, built with Next.js, React, Redux, TypeScript, and Material UI, provides a fast and responsive user experience. Application quality ensured through automated testing (Pytest for backend, Playwright for frontend) and monitored with Sentry. Code quality maintained using Husky, Lint-Staged, ESLint, Prettier, isort, Black, and Flake8. Dockerized deployments automated via Semaphore CI/CD pipelines and hosted on DigitalOcean. The client awarded a 5-star review, praising the platform’s quality, AI capabilities, and professional delivery.
 
-### SOFTCATALYST
+### Ignis Health
 **Software Engineer** | Aug 2021 - Present
 
-As a Full Stack Developer at SOFTCATALYST for the US-based client Pearl Certification, I design and optimize scalable applications using Django and ReactJS. My role includes integrating third-party services like ServiceTitan, Recurly, and Zendesk to streamline project management, subscription handling, and customer support. I leverage Celery to automate tasks such as PDF generation, email notifications, and webhook processing. Adhering to Agile methodologies, I lead sprint planning, conduct code reviews, and ensure feature stability with pytest, delivering robust, user-focused solutions.
+As a Full Stack Developer at Ignis Health for the US-based client Pearl Certification, I design and optimize scalable applications using Django and ReactJS. My role includes integrating third-party services like ServiceTitan, Recurly, and Zendesk to streamline project management, subscription handling, and customer support. I leverage Celery to automate tasks such as PDF generation, email notifications, and webhook processing. Adhering to Agile methodologies, I lead sprint planning, conduct code reviews, and ensure feature stability with pytest, delivering robust, user-focused solutions.
 
 ### RBK Tunisia
 **Hacker in Residence** | Jun 2020 - Aug 2021
