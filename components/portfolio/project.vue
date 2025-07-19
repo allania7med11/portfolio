@@ -107,7 +107,7 @@
                     contain
                     :style="imageHeight"
                     :src="project.images[page - 1].src"
-                    @click="overlayImage = true"
+                    @click="openOverlay(project.images[page - 1].src)"
                   />
                 </template>
 
@@ -131,30 +131,30 @@
             ></v-pagination>
           </div>
         </v-row>
-      </template>
+</template>
       <template v-if="project.video">
-        <v-row>
-          <v-container fluid class="mt-8">
-            <v-row align="center" justify="center">
-              <v-col cols="11">
-                <div class="video-description">
-                  This is a trailer for the software in version 1
-                </div>
-                <div class="video-container">
-                  <iframe
-                    :title="project.name"
-                    width="95%"
-                    height="343"
-                    :src="project.video"
-                    frameborder="0"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </v-col>
-            </v-row>
-          </v-container>
-        </v-row>
-      </template>
+  <v-row>
+    <v-container fluid class="mt-8">
+      <v-row align="center" justify="center">
+        <v-col cols="11">
+          <div class="video-description">
+            This is a trailer for the software in version 1
+          </div>
+          <div class="video-container">
+            <iframe
+              :title="project.name"
+              width="95%"
+              height="343"
+              :src="project.video"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-row>
+</template>
     </v-col>
     <v-col cols="12">
       <v-row align="center" justify="center">
