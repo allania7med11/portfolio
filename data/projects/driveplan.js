@@ -1,5 +1,5 @@
 export default {
-    name: "DrivePlan",
+    name: "Drive Planner",
     technology: "Next.js / Django",
     image: "driveplan/entry.png",
     technologies: ["Next.js", "TypeScript", "Tailwind", "Leaflet", "Konva", "Django Rest Framework", "OpenRouteService", "Docker"],
