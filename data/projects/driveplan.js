@@ -2,16 +2,15 @@ export default {
     name: "DrivePlan",
     technology: "Django/Next.js",
     image: "driveplan/plan_trip_one_day.png",
-    technologies: ["Digital Ocean", "Django Rest Framework", "Next.js", "TypeScript", "Leaflet", "Konva", "Docker", "Ansible"],
+    technologies: ["Docker", "Django Rest Framework", "OpenRouteService", "Next.js", "TypeScript", "Tailwind", "Leaflet", "Konva"],
     overview: `Full-stack truck driver trip planning and compliance application that automates FMCSA-compliant daily log sheet generation. Professional tool designed for the transportation industry with features including:`,
     features: [
-        `Intuitive trip planning interface for entering current location, pickup, dropoff destinations, and current cycle hours with real-time input validation`,
-        `Automated daily log sheet generation with precise canvas rendering meeting all FMCSA requirements including 15-minute interval tracking and duty status transitions`,
-        `Interactive route visualization using Leaflet mapping with multi-point routing, automatic fuel stops every 1,000 miles, and OpenRouteService API integration`,
-        `Multi-day trip support with sequential daily log sheets maintaining continuity across extended journeys and cumulative cycle hour tracking`,
-        `Real-time compliance monitoring with intelligent Hours of Service enforcement (11-hour driving, 14-hour duty, 70-hour/8-day cycle) and proactive violation prevention`,
-        `Enterprise-grade deployment with Docker containerization, Ansible orchestration, and automated CI/CD pipeline from Vagrant staging to Digital Ocean production`,
-        `Transportation domain expertise implementation including property-carrying driver regulations, mandatory rest period calculations, and ELD-compatible formatting`
+        `Intuitive trip planning interface for entering current location, pickup, dropoff destinations, and current cycle hours`,
+        `Responsive map overview with detailed route information and important stop locations including fuel stations, rest areas, and duty transition points`,
+        `Daily log sheets to keep track of different status changes while ensuring full FMCSA-compliant agreement and regulatory documentation`,
+        `Multi-day trip support with automated fuel stops every 1,000 miles, duty limit monitoring (11h driving/14h duty), and comprehensive tracking in both map and sheets`,
+        `Automated log sheet generation making compliance documentation much easier for drivers with pre-filled status transitions and calculated rest periods`,
+        `Early validation of future trip plans to ensure drivers never exceed the 70-hour/8-day cycle limit with proactive warnings`
     ],
     images: [
         {
