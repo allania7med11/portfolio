@@ -1,8 +1,8 @@
 export default {
     name: "DrivePlan",
-    technology: "Django/Next.js",
-    image: "driveplan/plan_trip_one_day.png",
-    technologies: ["Docker", "Django Rest Framework", "OpenRouteService", "Next.js", "TypeScript", "Tailwind", "Leaflet", "Konva"],
+    technology: "Next.js / Django",
+    image: "driveplan/entry.png",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "Leaflet", "Konva", "Django Rest Framework", "OpenRouteService", "Docker"],
     overview: `Full-stack truck driver trip planning and compliance application that automates FMCSA-compliant daily log sheet generation. Professional tool designed for the transportation industry with features including:`,
     features: [
         `Intuitive trip planning interface for entering current location, pickup, dropoff destinations, and current cycle hours`,
