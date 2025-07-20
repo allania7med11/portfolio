@@ -26,8 +26,8 @@ export default {
     ],
     actions: [
         {
-            text: "View Demo",
-            href: "https://chattagAi.effectivewebapp.com/"
+            text: "Visit Website",
+            href: "https://chattagai.com/"
         }
     ]
 };
