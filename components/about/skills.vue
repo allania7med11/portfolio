@@ -23,29 +23,32 @@
     <v-col cols="12" sm="7">
       <v-card
         data-aos="fade-left"
-        class="text-center pa-4"
+        class="pa-4"
         flat
       >
-        <div
-          v-for="(techs, category) in skills"
-          v-bind:key="category"
-          class="mb-4 text-left"
-        >
-          <div class="subtitle-1 font-weight-bold mb-2">
-            {{ category }}
-          </div>
-          <div class="d-flex flex-wrap">
-            <v-chip
-              v-for="tech in techs"
-              v-bind:key="tech"
-              class="mr-2 mb-2"
-              color="primary"
-              text-color="white"
-            >
-              {{ tech }}
-            </v-chip>
-          </div>
-        </div>
+        <v-row>
+          <v-col
+            v-for="(techs, category) in skills"
+            v-bind:key="category"
+            cols="12"
+            md="6"
+            class="mb-2"
+            style="max-width: 450px"
+          >
+            <div class="subtitle-1 font-weight-bold mb-2">
+              {{ category }}
+            </div>
+            <div class="d-flex flex-wrap">
+              <v-chip
+                v-for="tech in techs"
+                v-bind:key="tech"
+                class="mr-2 mb-2"
+                color="primary"
+                text-color="white"
+              >{{ tech }}</v-chip>
+            </div>
+          </v-col>
+        </v-row>
       </v-card>
     </v-col>
   </v-row>
