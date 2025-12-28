@@ -12,7 +12,7 @@ export default {
   image: require("@/assets/images/profile.png"),
   profession: { en: "Full Stack Engineer", fr: "Ingénieur Full Stack" },
   personal: {
-    Address: "Rue Ras Jdir, La Soukra, Tunisia",
+    Address: "Kairouan, Tunisia",
     Phone: "+21629667239",
     "E-mail": "allania7med11@gmail.com",
   },
