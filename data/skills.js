@@ -1,15 +1,7 @@
-export default [
-  { name: "Html/Css", value: "90%" },
-  { name: "Javascript/Typescript", value: "85%" },
-  { name: "Python/Django/DRF", value: "90%" },
-  { name: "Channels/WebSockets", value: "80%" },
-  { name: "React/MATERIAL-UI/Next", value: "90%" },
-  { name: "AI/OpenAI/LangChain", value: "80%" },
-  { name: "Pytest/Playwright", value: "80%" },
-  { name: "Node/Express", value: "80%" },
-  { name: "Vue/Vuetify/Nuxt", value: "85%" },
-  { name: "SQL/PostgreSQL", value: "85%" },
-  { name: "NoSQL/MongoDB", value: "80%" },
-  { name: "Linux/Docker/Ansible", value: "85%" },
-  { name: "Figma/UI", value: "75%" },
-];
+export default {
+  Backend: ["Python", "Django", "FastAPI", "Celery"],
+  Frontend: ["React", "Next.js", "Vue", "TypeScript"],
+  Data: ["PostgreSQL", "MongoDB", "Redis", "Kafka"],
+  DevOps: ["Docker", "Linux", "CI/CD", "Ansible"],
+  AI: ["OpenAI", "LangChain"]
+};
