@@ -13,8 +13,16 @@ export default {
         }
     },
     description: {
-        en: `Developed Shoppingify – a full-featured eCommerce platform with clear separation between backend and frontend. The backend, built with Django, DRF, Django Channels, Celery, and Redis, handles business logic, real-time messaging with WebSockets, and background tasks. AI integration using OpenAI GPT-4 Turbo, LangChain, and FAISS enables smart shopping assistance with conversational memory. The frontend, built with Next.js, React, Redux, TypeScript, and Material UI, provides a fast and responsive user experience. Application quality ensured through automated testing (Pytest for backend, Playwright for frontend) and monitored with Sentry. Code quality maintained using Husky, Lint-Staged, ESLint, Prettier, isort, Black, and Flake8. Dockerized deployments automated via Ansible and Semaphore CI/CD pipelines, hosted on DigitalOcean.`,
+        en: `Developed Shoppingify – full-featured eCommerce platform with clear backend/frontend separation.
+Built backend with Django, DRF, Django Channels, Celery, and Redis. Implemented real-time messaging with WebSockets.
+Integrated AI shopping assistant using OpenAI GPT-4 Turbo, LangChain, and FAISS with conversational memory.
+Built responsive frontend with Next.js, React, Redux, TypeScript, and Material UI.
+Automated Dockerized deployments via Ansible and Semaphore CI/CD, hosted on DigitalOcean.`,
 
-        fr: `Développement de Shoppingify – une plateforme eCommerce complète avec séparation claire entre backend et frontend. Le backend, construit avec Django, DRF, Django Channels, Celery et Redis, gère la logique métier, la messagerie en temps réel via WebSockets et les tâches de fond. L'intégration IA avec OpenAI GPT-4 Turbo, LangChain et FAISS permet une assistance d'achat intelligente avec mémoire conversationnelle. Le frontend, développé avec Next.js, React, Redux, TypeScript et Material UI, assure une expérience utilisateur rapide et réactive. La qualité de l'application est garantie par des tests automatisés (Pytest pour le backend, Playwright pour le frontend) et un monitoring via Sentry. La qualité du code est maintenue avec Husky, Lint-Staged, ESLint, Prettier, isort, Black et Flake8. Les déploiements sont automatisés avec Ansible et des pipelines CI/CD Semaphore, hébergés sur DigitalOcean.`
+        fr: `Développement de Shoppingify – plateforme eCommerce complète avec séparation claire backend/frontend.
+Construction du backend avec Django, DRF, Django Channels, Celery et Redis. Messagerie en temps réel avec WebSockets.
+Intégration d'un assistant d'achat IA avec OpenAI GPT-4 Turbo, LangChain et FAISS avec mémoire conversationnelle.
+Construction du frontend responsive avec Next.js, React, Redux, TypeScript et Material UI.
+Déploiements Dockerisés automatisés via Ansible et Semaphore CI/CD, hébergés sur DigitalOcean.`
     }
 };

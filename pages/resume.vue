@@ -61,9 +61,7 @@
             <div class="subtitle-2">
               {{ _tr(experience.dates.start) }}-{{ _tr(experience.dates.end) }}
             </div>
-            <div class="py-2 description">
-              {{ _tr(experience.description) }}
-            </div>
+            <div class="py-1 description">{{ _tr(experience.description) }}</div>
           </div>
         </div>
       </div>
@@ -89,9 +87,7 @@
             <div class="subtitle-2">
               {{ education.dates.start }}-{{ education.dates.end }}
             </div>
-            <div class="py-2 description">
-              {{ _tr(education.description) }}
-            </div>
+            <div class="py-1 description">{{ _tr(education.description) }}</div>
           </div>
         </div>
       </div>
@@ -158,6 +154,8 @@ export default {
 .description {
   font-size: 15px;
   white-space: pre-line;
+  margin-top: 4px;
+  line-height: 1.5;
 }
 .sections {
   display: flex;
