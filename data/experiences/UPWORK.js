@@ -1,7 +1,7 @@
 export default {
     title: {
-        en: "Freelance Full-Stack Developer (Part-Time)",
-        fr: "Développeur Full-Stack Freelance (Temps partiel)"
+        en: "Freelance Full Stack Engineer (Part-Time)",
+        fr: "Ingénieur Full Stack Freelance (Temps partiel)"
     },
     image: require("@/assets/images/Upwork.jpeg"),
     company: "Upwork",

@@ -114,6 +114,11 @@ export default {
      */
     extend(config, ctx) {}
   },
+  watchers: {
+    webpack: {
+      poll: 1000
+    }
+  },
   fontawesome: {
     imports: [
       {
