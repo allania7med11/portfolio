@@ -13,7 +13,15 @@ export default {
     }
   },
   description: {
-    en: `Built core features for invoice management platform. Translated requirements into tickets and architected microservices with Django and FastAPI. Containerized services with Docker. Created event-driven architecture with Kafka. Designed digital receipt system with customizable templates. Integrated AI-powered features. Developed complete POS integration including OAuth and webhook processing. Established testing standards and documentation. Set up CI/CD workflows, error monitoring, and code quality standards. Conducted code reviews and provided technical support.`,
-    fr: `Développement des fonctionnalités principales d'une plateforme de gestion de factures. Traduction des exigences en tickets et architecture microservices avec Django et FastAPI. Conteneurisation des services avec Docker. Création d'une architecture événementielle avec Kafka. Développement d'un système de reçus numériques avec templates personnalisables. Intégration de fonctionnalités IA. Intégration POS complète incluant OAuth et traitement des webhooks. Établissement des standards de tests et documentation. Mise en place des workflows CI/CD, monitoring des erreurs et standards de qualité du code. Réalisation de revues de code et support technique.`
+    en: `Architected microservices for invoice management platform using Django and FastAPI. Translated business requirements into technical specifications.
+Built event-driven architecture with Kafka for real-time receipt processing. Containerized all services with Docker.
+Designed digital receipt system with customizable templates. Integrated AI-powered features for document processing.
+Developed complete POS integration including OAuth flow and webhook processing.
+Set up CI/CD pipelines, error monitoring, and code quality standards.`,
+    fr: `Architecture de microservices pour une plateforme de gestion de factures avec Django et FastAPI. Traduction des exigences métier en spécifications techniques.
+Construction d'une architecture événementielle avec Kafka pour le traitement des reçus en temps réel. Conteneurisation de tous les services avec Docker.
+Conception d'un système de reçus numériques avec templates personnalisables. Intégration de fonctionnalités IA pour le traitement de documents.
+Développement d'une intégration POS complète incluant le flux OAuth et le traitement des webhooks.
+Mise en place de pipelines CI/CD, monitoring des erreurs et standards de qualité du code.`
   }
 };

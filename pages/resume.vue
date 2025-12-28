@@ -157,6 +157,7 @@ export default {
 }
 .description {
   font-size: 15px;
+  white-space: pre-line;
 }
 .sections {
   display: flex;
