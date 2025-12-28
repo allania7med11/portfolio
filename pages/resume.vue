@@ -26,11 +26,13 @@
         <div class="px-2 py-2" v-for="(techs, category) in skills" v-bind:key="category">
           <div class="subheading font-weight-bold mb-1">{{ category }}</div>
           <div class="d-flex flex-wrap">
-            <span
+            <v-chip
               v-for="tech in techs"
               v-bind:key="tech"
-              class="skill-tag mr-1 mb-1"
-            >{{ tech }}</span>
+              class="mr-2 mb-2"
+              color="grey darken-2"
+              text-color="white"
+            >{{ tech }}</v-chip>
           </div>
         </div>
       </div>
@@ -155,14 +157,6 @@ export default {
 }
 .description {
   font-size: 15px;
-}
-.skill-tag {
-  background-color: #616161;
-  color: white;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 11px;
-  font-weight: 500;
 }
 .sections {
   display: flex;
