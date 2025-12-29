@@ -1,7 +1,7 @@
 export default {
   title: {
-    en: "Senior Full Stack Developer",
-    fr: `Développeur Full Stack Senior`
+    en: "Full Stack Engineer",
+    fr: `Ingénieur Full Stack`
   },
   image: require("@/assets/images/Ignis_Health.png"),
   company: "Ignis Health",
