@@ -1,19 +1,29 @@
 export default {
   title: {
-    en: "Software Engineer",
-    fr: `Ingénieur Logiciel`
+    en: "Senior Full Stack Developer",
+    fr: `Développeur Full Stack Senior`
   },
   image: require("@/assets/images/Ignis_Health.png"),
   company: "Ignis Health",
   dates: {
     start: "Aug 2021",
     end: {
-      en: "Present",
-      fr: `Présent`
+      en: "Sep 2025",
+      fr: `Sep 2025`
     }
   },
   description: {
-    en: `As a Full Stack Developer at Ignis Health for the US-based client Pearl Certification, I design and optimize scalable applications using Django and ReactJS. My role includes integrating third-party services like ServiceTitan, Recurly, and Zendesk to streamline project management, subscription handling, and customer support. I leverage Celery to automate tasks such as PDF generation, email notifications, and webhook processing. Adhering to Agile methodologies, I lead sprint planning, conduct code reviews, and ensure feature stability with pytest, delivering robust, user-focused solutions.`,
-    fr: `En tant que Développeur Full Stack chez Ignis Health pour le client américain Pearl Certification, je conçois et optimise des applications évolutives en utilisant Django et ReactJS. Mon rôle inclut l’intégration de services tiers tels que ServiceTitan, Recurly et Zendesk pour faciliter la gestion de projets, la gestion des abonnements et le support client. J’utilise Celery pour automatiser des tâches telles que la génération de PDF, les notifications par email et le traitement de webhooks. En respectant les méthodologies Agile, je dirige la planification des sprints, effectue des revues de code et veille à la stabilité des fonctionnalités avec pytest, offrant ainsi des solutions robustes et centrées sur les utilisateurs.`
+    en: `Developed home certification platform for US-based client Pearl Certification using Django, PostgreSQL, and React with Redux.
+Built React solar valuation tool enabling appraisers to calculate home value impact with energy analysis, cash flow modeling, and automated PDF reports.
+Integrated ServiceTitan for project management, Recurly for subscription billing, and Zendesk for customer support via REST APIs and webhooks.
+Automated batch processing, PDF generation, email notifications, and data sync with Celery background tasks.
+Developed public API, partner portal, dashboard analytics, and maintenance tracking features.
+Led sprint planning, conducted code reviews, and maintained test coverage with pytest.`,
+    fr: `Développement d'une plateforme de certification immobilière pour le client américain Pearl Certification avec Django, PostgreSQL et React avec Redux.
+Construction d'un outil React de valorisation solaire permettant aux évaluateurs de calculer l'impact sur la valeur immobilière avec analyse énergétique, modélisation des flux de trésorerie et rapports PDF automatisés.
+Intégration de ServiceTitan pour la gestion de projets, Recurly pour la facturation et Zendesk pour le support client via APIs REST et webhooks.
+Automatisation du traitement par lots, génération PDF, notifications email et synchronisation des données avec Celery.
+Développement d'API publique, portail partenaires, tableaux de bord analytiques et suivi de maintenance.
+Direction de la planification des sprints, revues de code et couverture de tests avec pytest.`
   }
 };
