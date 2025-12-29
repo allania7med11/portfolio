@@ -17,11 +17,11 @@ export default {
 Built event-driven architecture with Kafka for real-time receipt processing. Containerized all services with Docker.
 Designed digital receipt system with customizable templates. Integrated AI-powered features for document processing.
 Developed complete POS integration including OAuth flow and webhook processing.
-Set up CI/CD pipelines, error monitoring, and code quality standards.`,
+Deployed on Huawei Cloud (ECS, OBS). CI/CD with GitHub Actions, Cloudflare CDN, and Sentry monitoring.`,
     fr: `Architecture de microservices pour une plateforme de gestion de factures avec Django et FastAPI. Traduction des exigences métier en spécifications techniques.
 Construction d'une architecture événementielle avec Kafka pour le traitement des reçus en temps réel. Conteneurisation de tous les services avec Docker.
 Conception d'un système de reçus numériques avec templates personnalisables. Intégration de fonctionnalités IA pour le traitement de documents.
 Développement d'une intégration POS complète incluant le flux OAuth et le traitement des webhooks.
-Mise en place de pipelines CI/CD, monitoring des erreurs et standards de qualité du code.`
+Déployé sur Huawei Cloud (ECS, OBS). CI/CD avec GitHub Actions, Cloudflare CDN et monitoring Sentry.`
   }
 };
