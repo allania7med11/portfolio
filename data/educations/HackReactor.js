@@ -2,14 +2,21 @@ export default {
   school: "Hack Reactor",
   image: require("@/assets/images/HackReactor.png"),
   degree: "",
-  field: "Développement Web Full-Stack",
+  field: "Full-Stack Web Development",
   dates: {
     start: "Jun 2020",
     end: "Oct 2020"
   },
-  description: `After demonstrating my autonomy and self-discipline while working at Effective Web App, I was given the opportunity to work for RebootKamp in Tunisia, which was opened in 2019 by Hack Reactor. As a Hacker in Residence, I mastered the Hack Reactor program and delivered technical lectures on various frameworks, including Express, React, Angular, and MongoDB. It was a challenging experience, but my team and I were able to provide an excellent learning experience for the students, and their graduation was a highlight of our time there.`,
   description:{
-    en: "After demonstrating my autonomy and self-discipline while working at Effective Web App, I was given the opportunity to work for RebootKamp in Tunisia, which was opened in 2019 by Hack Reactor. As a Hacker in Residence, I mastered the Hack Reactor program and delivered technical lectures on various frameworks, including Express, React, Angular, and MongoDB. It was a challenging experience, but my team and I were able to provide an excellent learning experience for the students, and their graduation was a highlight of our time there.",
-    fr: "Après avoir démontré mon autonomie et mon autodiscipline en travaillant chez Effective Web App, j'ai eu l'opportunité de travailler pour RebootKamp en Tunisie, qui a été ouvert en 2019 par Hack Reactor. En tant que Hacker en résidence, j'ai maîtrisé le programme Hack Reactor et donné des conférences techniques sur divers frameworks, notamment Express, React, Angular et MongoDB. Ce fut une expérience stimulante, mais mon équipe et moi avons pu offrir une excellente expérience d'apprentissage aux étudiants, et leur diplôme a été un moment fort de notre séjour là-bas."
+    en: `Mastered intensive Full Stack JavaScript curriculum in 12-week immersive program.
+Built full-stack applications with React, Node.js, Express, and MongoDB.
+Learned software engineering best practices: Git workflow, code reviews, pair programming.
+Developed problem-solving skills through daily algorithm challenges and system design.
+Achieved mastery level enabling transition to teaching role.`,
+    fr: `Maîtrisé le programme intensif Full Stack JavaScript en 12 semaines d'immersion.
+Construit des applications full-stack avec React, Node.js, Express et MongoDB.
+Appris les meilleures pratiques d'ingénierie logicielle: workflow Git, revues de code, pair programming.
+Développé des compétences en résolution de problèmes via des défis algorithmiques quotidiens et conception système.
+Atteint un niveau de maîtrise permettant la transition vers un rôle d'enseignant.`
   }
 };

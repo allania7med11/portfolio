@@ -23,16 +23,16 @@
       </div>
       <div class="d-flex flex-column">
         <div class="black px-2 py-4 title">{{ _tr(msgs.skills) }}</div>
-        <div class="px-2 py-1" v-for="(skill, key) in skills" v-bind:key="key">
-          <div
-            class="subheading font-weight-bold d-flex"
-            style="justify-content: space-between"
-          >
-            <div>{{ skill.name }}</div>
-            <div>{{ skill.value }}</div>
-          </div>
-          <div class="progressbar">
-            <div :style="{ width: skill.value }"></div>
+        <div class="px-2 py-2" v-for="(techs, category) in skills" v-bind:key="category">
+          <div class="subheading font-weight-bold mb-1">{{ category }}</div>
+          <div class="d-flex flex-wrap">
+            <v-chip
+              v-for="tech in techs"
+              v-bind:key="tech"
+              class="mr-2 mb-2"
+              color="grey darken-2"
+              text-color="white"
+            >{{ tech }}</v-chip>
           </div>
         </div>
       </div>
@@ -61,9 +61,7 @@
             <div class="subtitle-2">
               {{ _tr(experience.dates.start) }}-{{ _tr(experience.dates.end) }}
             </div>
-            <div class="py-2 description">
-              {{ _tr(experience.description) }}
-            </div>
+            <div class="py-1 description">{{ _tr(experience.description) }}</div>
           </div>
         </div>
       </div>
@@ -89,9 +87,7 @@
             <div class="subtitle-2">
               {{ education.dates.start }}-{{ education.dates.end }}
             </div>
-            <div class="py-2 description">
-              {{ _tr(education.description) }}
-            </div>
+            <div class="py-1 description">{{ _tr(education.description) }}</div>
           </div>
         </div>
       </div>
@@ -157,19 +153,9 @@ export default {
 }
 .description {
   font-size: 15px;
-}
-.progressbar {
-  background-color: black;
-  border-radius: 13px;
-  /* (height of inner div) / 2 + padding */
-  padding: 3px;
-}
-
-.progressbar > div {
-  background-color: orange;
-  /* Adjust with JavaScript */
-  height: 5px;
-  border-radius: 2px;
+  white-space: pre-line;
+  margin-top: 4px;
+  line-height: 1.5;
 }
 .sections {
   display: flex;
