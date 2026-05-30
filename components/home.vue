@@ -4,7 +4,7 @@
         justify="center">
         <v-col>
           <h1 >Hello, I'm <span class="primary--text">Allani Ahmed</span></h1>
-          <h1 >I'm a full-stack web developer</h1>
+          <h1 >I'm a Full Stack Engineer</h1>
           <v-btn @click="pageChange('about')" class="ma-2" outlined color="white" >
             View my work<Fas class="ml-2" i="arrow-right" />
           </v-btn>

@@ -5,9 +5,9 @@
         <img height="200px" :src="require('@/assets/images/profile.png')" />
         <v-card-title class="justify-center">Who's this guy?</v-card-title>
         <v-card-subtitle class="justify-center">
-          I'm a full-stack web developer from Tunis ,Kairouan.
-          <br />I have a passion to solve difficult problems and make effective
-          applications that make life of people easier.
+          I'm a Full Stack Engineer from Kairouan, Tunisia.
+          <br />I have a passion to solve difficult problems and build effective
+          applications that make life easier.
           <br />
           <v-btn
             small
@@ -23,38 +23,29 @@
     <v-col cols="12" sm="7">
       <v-card
         data-aos="fade-left"
-        v-observe-visibility="visibilityChanged"
-        class="text-center"
+        class="pa-4"
         flat
       >
-        <v-row
-          stretch
-          v-for="(value, key) in skills"
-          class="my-4"
-          no-gutters
-          v-bind:key="key"
-        >
-          <v-col>
-            <div class="text-center blue darken-1 white--text">
-              <span class="body-2 font-weight-bold px-1">{{ value.name }}</span>
+        <v-row>
+          <v-col
+            v-for="(techs, category) in skills"
+            v-bind:key="category"
+            cols="12"
+            md="6"
+            class="mb-2"
+            style="max-width: 450px"
+          >
+            <div class="subtitle-1 font-weight-bold mb-2">
+              {{ category }}
             </div>
-          </v-col>
-          <v-col>
-            <div style="height: 100%" class="grey lighten-3">
-              <div
-                style="height: 100%; transition: width 2s; transition-delay: 1s"
-                :style="{ width: isVisible ? value.value : '0%' }"
-                class="blue darken-4"
-              >
-                &nbsp;
-              </div>
-            </div>
-          </v-col>
-          <v-col cols="1">
-            <div
-              class="text-center grey lighten-2 text-right grey--text--lighten-1"
-            >
-              <span class="body-2">{{ value.value }}</span>
+            <div class="d-flex flex-wrap">
+              <v-chip
+                v-for="tech in techs"
+                v-bind:key="tech"
+                class="mr-2 mb-2"
+                color="primary"
+                text-color="white"
+              >{{ tech }}</v-chip>
             </div>
           </v-col>
         </v-row>
@@ -65,38 +56,23 @@
 
 <script>
 import features from "~/components/about/features.vue";
-import skills from "~/components/about/skills.vue";
-import { mapState, mapActions } from "vuex";
+import { mapActions } from "vuex";
 export default {
   components: {
     features,
-    skills,
   },
   data: () => ({
     show: false,
-    isVisible: false,
-    skills: [
-      { name: "Html/Css", value: "90%" },
-      { name: "Javascript/Typescript", value: "85%" },
-      { name: "Python/Django/DRF", value: "90%" },
-      { name: "Channels/WebSockets", value: "80%" },
-      { name: "React/MATERIAL-UI/Next", value: "90%" },
-      { name: "AI/OpenAI/LangChain", value: "80%" },
-      { name: "Pytest/Playwright", value: "80%" },
-      { name: "Node/Express", value: "80%" },
-      { name: "Vue/Vuetify/Nuxt", value: "85%" },
-      { name: "SQL/PostgreSQL", value: "85%" },
-      { name: "NoSQL/MongoDB", value: "80%" },
-      { name: "Linux/Docker/Ansible", value: "85%" },
-      { name: "Figma/UI", value: "75%" },
-    ],
+    skills: {
+      Backend: ["Python", "Django", "FastAPI", "Celery"],
+      Frontend: ["React", "Next.js", "Vue", "TypeScript"],
+      Data: ["PostgreSQL", "MongoDB", "Redis", "Kafka"],
+      DevOps: ["Docker", "Linux", "GitHub Actions", "Cloudflare", "Huawei Cloud"],
+      AI: ["OpenAI", "LangChain"]
+    },
   }),
   methods: {
     ...mapActions(["pageChange"]),
-    visibilityChanged(isVisible, entry) {
-      this.isVisible = isVisible;
-      console.log({ isVisible });
-    },
   },
 };
 </script>
