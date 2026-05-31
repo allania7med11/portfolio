@@ -1,0 +1,37 @@
+name: Build & push images
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Stub backend/.env (compose validates env_file at parse time)
+        run: touch backend/.env
+
+      # Static site is generated inside the nginx image's node:18 build stage,
+      # so no node setup here — the build is hermetic.
+      - name: Build & push prod images
+        run: |
+          docker compose -f docker-compose.prod.yml build
+          docker compose -f docker-compose.prod.yml push

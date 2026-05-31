@@ -1,0 +1,4 @@
+fastapi[standard]==0.118.0
+pydantic-settings==2.11.0
+email-validator==2.3.0
+resend==2.4.0
