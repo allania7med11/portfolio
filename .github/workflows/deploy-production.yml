@@ -1,0 +1,50 @@
+name: Deploy to production
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Checkout (for the prod compose file)
+        uses: actions/checkout@v4
+
+      - name: Push compose + backend/.env to prod
+        run: |
+          ssh -i ~/.ssh/id_ed25519 ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+            "mkdir -p ~/apps/portfolio/backend"
+          scp -i ~/.ssh/id_ed25519 docker-compose.prod.yml \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/apps/portfolio/docker-compose.yml
+          cat > /tmp/backend.env <<'EOF'
+          ${{ secrets.BACKEND_ENV }}
+          EOF
+          scp -i ~/.ssh/id_ed25519 /tmp/backend.env \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/apps/portfolio/backend/.env
+          rm /tmp/backend.env
+
+      - name: Pull & restart on prod
+        env:
+          GHCR_USER: ${{ secrets.GHCR_USER }}
+          GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
+        run: |
+          ssh -i ~/.ssh/id_ed25519 \
+            -o SendEnv=GHCR_USER -o SendEnv=GHCR_TOKEN \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+            "GHCR_USER='$GHCR_USER' GHCR_TOKEN='$GHCR_TOKEN' bash -s" <<'EOF'
+            set -e
+            cd ~/apps/portfolio
+            echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
+            docker compose pull
+            docker compose up -d
+            docker image prune -f
+            docker ps --filter "name=portfolio"
+          EOF
