@@ -7,8 +7,34 @@ services:
       dockerfile: Dockerfile
     env_file: .env 
     volumes:
-      - .:/app  
+      - .:/app
       - /app/node_modules # Exclude node_modules from the volume mapping
-    ports:
-      - "3000:3000"
     user: node
+    # No host port published — nginx reaches the Nuxt dev server as app:3000.
+
+  portfolio_backend_dev:
+    container_name: portfolio_backend_dev
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: development
+    env_file: ./backend/.env
+    environment:
+      - ENVIRONMENT=dev
+    restart: unless-stopped
+    # No host port published — nginx reaches it over the compose network.
+
+  portfolio_nginx_dev:
+    container_name: portfolio_nginx_dev
+    build:
+      context: .
+      dockerfile: nginx_dev/Dockerfile
+    ports:
+      - "8090:80"  # Development entrypoint: serves frontend + proxies /api
+    depends_on:
+      - app
+      - portfolio_backend_dev
+    restart: unless-stopped
+    volumes:
+      # Mount over the baked-in nginx.conf for live edits without rebuild.
+      - ./nginx_dev/nginx.conf:/etc/nginx/nginx.conf
