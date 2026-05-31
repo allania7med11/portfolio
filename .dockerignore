@@ -1,0 +1,10 @@
+node_modules
+.nuxt
+portfolio
+.git
+.github
+deploy
+.vscode
+backend
+**/__pycache__
+*.log
