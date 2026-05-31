@@ -18,16 +18,17 @@ jobs:
       - name: Checkout (for the prod compose file)
         uses: actions/checkout@v4
 
-      - name: Push compose + backend/.env to prod
+      - name: Push prod compose
         run: |
-          ssh -i ~/.ssh/id_ed25519 ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
-            "mkdir -p ~/apps/portfolio/backend"
-          scp -i ~/.ssh/id_ed25519 docker-compose.prod.yml \
-            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/apps/portfolio/docker-compose.yml
+          rsync -e "ssh -i ~/.ssh/id_ed25519" --mkpath docker-compose.prod.yml \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/apps/portfolio/docker-compose.prod.yml
+
+      - name: Push backend/.env
+        run: |
           cat > /tmp/backend.env <<'EOF'
           ${{ secrets.BACKEND_ENV }}
           EOF
-          scp -i ~/.ssh/id_ed25519 /tmp/backend.env \
+          rsync -e "ssh -i ~/.ssh/id_ed25519" --mkpath /tmp/backend.env \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/apps/portfolio/backend/.env
           rm /tmp/backend.env
 
@@ -37,14 +38,13 @@ jobs:
           GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
         run: |
           ssh -i ~/.ssh/id_ed25519 \
-            -o SendEnv=GHCR_USER -o SendEnv=GHCR_TOKEN \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
             "GHCR_USER='$GHCR_USER' GHCR_TOKEN='$GHCR_TOKEN' bash -s" <<'EOF'
             set -e
             cd ~/apps/portfolio
             echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
-            docker compose pull
-            docker compose up -d
+            docker compose -f docker-compose.prod.yml pull
+            docker compose -f docker-compose.prod.yml up -d
             docker image prune -f
             docker ps --filter "name=portfolio"
           EOF
