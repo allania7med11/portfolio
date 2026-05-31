@@ -44,7 +44,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["@/plugins/global",{ src: "@/plugins/aos.js", mode: "client" }],
+  plugins: ["@/plugins/global",{ src: "@/plugins/aos.js", mode: "client" },{ src: "@/plugins/chattag.client.js", mode: "client" }],
   /*
    ** Nuxt.js dev-modules
    */
