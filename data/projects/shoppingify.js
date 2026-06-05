@@ -74,6 +74,9 @@ export default {
         "AI Shopping Assistant: Provide smart product recommendations and answers using OpenAI GPT-4 Turbo with real-time vector search (FAISS) and conversation memory.",
         "AI Product Awareness: AI stays updated with real-time product info and prices via asynchronous index rebuilding (Celery), ensuring accurate responses to customer questions.",
         "Conversational Memory: AI personalizes the experience by remembering previous conversations for better follow-ups.",
+        "Agentic Navigation: The AI doesn't just talk, it acts. Ask to see a product and it instantly opens that page for you, turning a chat into a hands-free shopping copilot.",
+        "Smart Product Comparison: The AI breaks competing products into a clean side-by-side spec rundown, then recommends which one wins for your specific needs, like a sales expert who actually knows the catalog.",
+        "Agentic Cart Control: Skip the clicking and scrolling. Just tell the AI to check your cart, change a quantity, or drop an item, and it updates everything for you in real time, so editing your order feels like talking to a cashier instead of wrestling with buttons.",
         "Admin Chatbot Control & Review: Admins can monitor conversations in real time, review AI responses, and enable or disable the chatbot for clients to maintain service quality.",
       ],
       images: [
@@ -81,6 +84,9 @@ export default {
         { src: require("@/assets/images/shoppingify/admin_chat_panel.png") },
         { src: require("@/assets/images/shoppingify/real_time_messaging.gif") },
         { src: require("@/assets/images/shoppingify/ai_shopping_assistant.gif") },
+        { src: require("@/assets/images/shoppingify/agentic_navigation.gif") },
+        { src: require("@/assets/images/shoppingify/agentic_comparison.gif") },
+        { src: require("@/assets/images/shoppingify/agentic_cart.gif") },
         { src: require("@/assets/images/shoppingify/admin_chatbot_control.png") }
       ]
     }

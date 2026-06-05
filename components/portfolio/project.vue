@@ -86,7 +86,7 @@
                       :style="imageHeight"
                       :src="group.images[groupPages[groupName] - 1].src"
                       @click="
-                        openOverlay(group.images[groupPages[groupName] - 1].src)
+                        openOverlay(group.images, groupPages[groupName] - 1)
                       "
                     />
                     <v-row align="center" justify="center" class="mt-4">
@@ -107,17 +107,41 @@
                     contain
                     :style="imageHeight"
                     :src="project.images[page - 1].src"
-                    @click="openOverlay(project.images[page - 1].src)"
+                    @click="openOverlay(project.images, page - 1)"
                   />
                 </template>
 
                 <v-overlay
                   v-if="overlayImage"
                   :value="overlayImage"
-                  class="d-flex justify-center align-center zoom-out-cursor"
+                  class="d-flex justify-center align-center"
                   @click="overlayImage = false"
                 >
-                  <v-img :src="currentImage" max-width="90vw" />
+                  <v-btn
+                    v-if="overlayImages.length > 1"
+                    icon
+                    large
+                    class="overlay-arrow overlay-arrow--left"
+                    @click.stop="prevOverlay"
+                  >
+                    <v-icon size="40">mdi-chevron-left</v-icon>
+                  </v-btn>
+                  <v-img
+                    :src="overlayImages[overlayIndex].src"
+                    max-width="90vw"
+                    max-height="90vh"
+                    contain
+                    class="zoom-out-cursor"
+                  />
+                  <v-btn
+                    v-if="overlayImages.length > 1"
+                    icon
+                    large
+                    class="overlay-arrow overlay-arrow--right"
+                    @click.stop="nextOverlay"
+                  >
+                    <v-icon size="40">mdi-chevron-right</v-icon>
+                  </v-btn>
                 </v-overlay>
               </v-col>
             </v-row>
@@ -181,7 +205,8 @@ export default {
     return {
       page: 1,
       overlayImage: false,
-      currentImage: null,
+      overlayImages: [],
+      overlayIndex: 0,
       groupPages: {},
     };
   },
@@ -204,9 +229,18 @@ export default {
     },
   },
   methods: {
-    openOverlay(imageSrc) {
-      this.currentImage = imageSrc;
+    openOverlay(images, index) {
+      this.overlayImages = images;
+      this.overlayIndex = index;
       this.overlayImage = true;
+    },
+    nextOverlay() {
+      this.overlayIndex = (this.overlayIndex + 1) % this.overlayImages.length;
+    },
+    prevOverlay() {
+      this.overlayIndex =
+        (this.overlayIndex - 1 + this.overlayImages.length) %
+        this.overlayImages.length;
     },
     updateGroupImage(groupName) {
       // Force a re-render of the image when pagination changes
@@ -273,5 +307,22 @@ ul.features {
 }
 .image-group {
   margin-bottom: 32px;
+}
+.overlay-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  color: #fff !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+.overlay-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+.overlay-arrow--left {
+  left: 24px;
+}
+.overlay-arrow--right {
+  right: 24px;
 }
 </style>
