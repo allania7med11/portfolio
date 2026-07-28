@@ -51,7 +51,7 @@
           class="d-flex my-2"
         >
           <div class="d-flex flex-column flex-grow-2 pa-2">
-            <img height="50px" :src="experience.image" />
+            <img v-if="experience.image" height="50px" :src="experience.image" />
           </div>
           <div class="d-flex flex-column flex-grow-10">
             <div class="title pt-1">
