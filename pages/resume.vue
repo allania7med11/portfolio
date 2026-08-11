@@ -43,7 +43,7 @@
       </div>
       <div class="d-flex flex-column">
         <v-divider></v-divider>
-        <div class="py-3 title">Experience</div>
+        <div class="py-3 title">{{ _tr(msgs.experience) }}</div>
         <v-divider></v-divider>
         <div
           v-for="experience in experiences"
@@ -67,7 +67,7 @@
       </div>
       <div class="d-flex flex-column">
         <v-divider></v-divider>
-        <div class="py-3 title">Education</div>
+        <div class="py-3 title">{{ _tr(msgs.education) }}</div>
         <v-divider></v-divider>
         <div
           v-for="education in educations"
@@ -75,7 +75,7 @@
           class="d-flex my-2"
         >
           <div class="d-flex flex-column flex-grow-2 pa-2">
-            <img height="50px" :src="education.image" />
+            <img v-if="education.image" height="50px" :src="education.image" />
           </div>
           <div class="d-flex flex-column flex-grow-10">
             <div class="title pt-1">
@@ -122,6 +122,14 @@ export default {
       skills : {
         en: "Skills",
         fr: "Compétences"
+      },
+      experience : {
+        en: "Experience",
+        fr: "Expérience"
+      },
+      education : {
+        en: "Education",
+        fr: "Formation"
       },
 
     },
