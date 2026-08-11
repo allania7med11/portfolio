@@ -2,10 +2,19 @@ export default {
   school: "Hack Reactor",
   image: require("@/assets/images/HackReactor.png"),
   degree: "",
-  field: "Full-Stack Web Development",
+  field: {
+    en: "Full-Stack Web Development",
+    fr: `Développement Web Full-Stack`
+  },
   dates: {
-    start: "Jun 2020",
-    end: "Oct 2020"
+    start: {
+      en: "Jun 2020",
+      fr: `Juin 2020`
+    },
+    end: {
+      en: "Oct 2020",
+      fr: `Oct. 2020`
+    }
   },
   description:{
     en: `Mastered intensive Full Stack JavaScript curriculum in 12-week immersive program.

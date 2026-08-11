@@ -6,7 +6,10 @@ export default {
     image: require("@/assets/images/Upwork.jpeg"),
     company: "Upwork",
     dates: {
-        start: "Jun 2024",
+        start: {
+            en: "Jun 2024",
+            fr: "Juin 2024"
+        },
         end: {
             en: "Present",
             fr: "Présent"

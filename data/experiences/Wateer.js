@@ -6,7 +6,10 @@ export default {
   image: require("@/assets/images/Wateer.png"),
   company: "Wateer",
   dates: {
-    start: "Oct 2025",
+    start: {
+      en: "Oct 2025",
+      fr: `Oct. 2025`
+    },
     end: {
       en: "Present",
       fr: `Présent`

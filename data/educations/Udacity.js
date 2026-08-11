@@ -2,10 +2,19 @@ export default {
     school: "Udacity",
     image: require("@/assets/images/Udacity.jpeg"),
     degree: "Nanodegree, ",
-    field: "Front-End Web Development",
+    field: {
+      en: "Front-End Web Development",
+      fr: `Développement Web Front-End`
+    },
     dates: {
-      start: "Aug 2020",
-      end: "Jan 2021"
+      start: {
+        en: "Aug 2020",
+        fr: `Août 2020`
+      },
+      end: {
+        en: "Jan 2021",
+        fr: `Janv. 2021`
+      }
     },
     description:{
       en: `Earned scholarship as top-performing student in Front End Developer track.

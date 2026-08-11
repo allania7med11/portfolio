@@ -17,14 +17,14 @@
           v-for="(value, key) in infos.personal"
           v-bind:key="key"
         >
-          <div class="subheading font-weight-bold">{{ key }}:</div>
+          <div class="subheading font-weight-bold">{{ _tr(msgs.personalLabels[key] || key) }}:</div>
           <div class="body-2 font-weight-light">{{ value }}</div>
         </div>
       </div>
       <div class="d-flex flex-column">
         <div class="black px-2 py-4 title">{{ _tr(msgs.skills) }}</div>
         <div class="px-2 py-2" v-for="(techs, category) in skills" v-bind:key="category">
-          <div class="subheading font-weight-bold mb-1">{{ category }}</div>
+          <div class="subheading font-weight-bold mb-1">{{ _tr(msgs.skillLabels[category] || category) }}</div>
           <div class="d-flex flex-wrap">
             <v-chip
               v-for="tech in techs"
@@ -82,10 +82,10 @@
               {{ education.school }}
             </div>
             <div class="subtitle-2">
-              {{ education.degree }}{{ _tr(education.field) }}
+              {{ _tr(education.degree) }}{{ _tr(education.field) }}
             </div>
             <div class="subtitle-2">
-              {{ education.dates.start }}-{{ education.dates.end }}
+              {{ _tr(education.dates.start) }}-{{ _tr(education.dates.end) }}
             </div>
             <div class="py-1 description">{{ _tr(education.description) }}</div>
           </div>
@@ -131,7 +131,14 @@ export default {
         en: "Education",
         fr: "Formation"
       },
-
+      personalLabels: {
+        Address: { en: "Address", fr: "Adresse" },
+        Phone: { en: "Phone", fr: "Téléphone" },
+      },
+      skillLabels: {
+        Data: { en: "Data", fr: "Données" },
+        AI: { en: "AI", fr: "IA" },
+      },
     },
   }),
   created() {

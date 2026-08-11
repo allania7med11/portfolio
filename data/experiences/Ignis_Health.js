@@ -6,10 +6,13 @@ export default {
   image: require("@/assets/images/Ignis_Health.png"),
   company: "Ignis Health",
   dates: {
-    start: "Aug 2021",
+    start: {
+      en: "Aug 2021",
+      fr: `Août 2021`
+    },
     end: {
       en: "Sep 2025",
-      fr: `Sep 2025`
+      fr: `Sept. 2025`
     }
   },
   description: {

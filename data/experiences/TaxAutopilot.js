@@ -6,7 +6,10 @@ export default {
   image: require("@/assets/images/YCombinator.png"),
   company: "Confidential (FinTech, pre-launch)",
   dates: {
-    start: "May 2026",
+    start: {
+      en: "May 2026",
+      fr: `Mai 2026`
+    },
     end: {
       en: "Present",
       fr: `Présent`
