@@ -3,5 +3,5 @@ export default {
   Frontend: ["React", "Next.js", "Vue", "TypeScript"],
   Data: ["PostgreSQL", "MongoDB", "Redis", "Kafka"],
   DevOps: ["Docker", "Kubernetes", "Linux", "GitHub Actions", "Grafana", "Cloudflare", "Huawei Cloud"],
-  AI: ["OpenAI GPT-4", "Gemini", "LangChain", "Agentic AI", "RAG", "Vector search (FAISS)", "Prompt engineering"]
+  AI: ["OpenAI", "Gemini", "LangChain", "LangGraph", "Agentic AI", "RAG", "LLM evals"]
 };

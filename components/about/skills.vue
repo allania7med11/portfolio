@@ -56,6 +56,7 @@
 
 <script>
 import features from "~/components/about/features.vue";
+import skills from "~/data/skills";
 import { mapActions } from "vuex";
 export default {
   components: {
@@ -63,13 +64,7 @@ export default {
   },
   data: () => ({
     show: false,
-    skills: {
-      Backend: ["Python", "Django", "FastAPI", "Celery"],
-      Frontend: ["React", "Next.js", "Vue", "TypeScript"],
-      Data: ["PostgreSQL", "MongoDB", "Redis", "Kafka"],
-      DevOps: ["Docker", "Linux", "GitHub Actions", "Cloudflare", "Huawei Cloud"],
-      AI: ["OpenAI", "LangChain"]
-    },
+    skills,
   }),
   methods: {
     ...mapActions(["pageChange"]),
